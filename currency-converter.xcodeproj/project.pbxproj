@@ -29,11 +29,14 @@
 		5047268D267CF89600E5F84E /* CalculatorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047268C267CF89600E5F84E /* CalculatorRouter.swift */; };
 		50472692267CF8A300E5F84E /* CalculatorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50472691267CF8A300E5F84E /* CalculatorConfigurator.swift */; };
 		50472698267D03DD00E5F84E /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50472697267D03DD00E5F84E /* SceneFactory.swift */; };
-		504726A0267D065C00E5F84E /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047269F267D065C00E5F84E /* UserDefaultsKey.swift */; };
 		504726A6267D17BE00E5F84E /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504726A5267D17BE00E5F84E /* ExchangeRates.swift */; };
 		504726AB267D181E00E5F84E /* DatabaseManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504726AA267D181E00E5F84E /* DatabaseManageable.swift */; };
 		506D527D267DB5F500C437BC /* CurrentCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506D527C267DB5F500C437BC /* CurrentCountry.swift */; };
 		506D5282267DB60100C437BC /* CurrentCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506D5281267DB60100C437BC /* CurrentCurrency.swift */; };
+		506D528F267E0E0E00C437BC /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 50906A23267CA543009B3CA9 /* Countries.json */; };
+		506D5297267E0E1400C437BC /* RateResponseSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 50472629267CECE900E5F84E /* RateResponseSuccess.json */; };
+		506D529F267E0E1800C437BC /* RateResponseFail.json in Resources */ = {isa = PBXBuildFile; fileRef = 50472631267CECFF00E5F84E /* RateResponseFail.json */; };
+		506D52B0267E0EAF00C437BC /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 50906A23267CA543009B3CA9 /* Countries.json */; };
 		50906A24267CA543009B3CA9 /* Countries.json in Sources */ = {isa = PBXBuildFile; fileRef = 50906A23267CA543009B3CA9 /* Countries.json */; };
 		50906A31267CA5B5009B3CA9 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A30267CA5B5009B3CA9 /* CountriesViewController.swift */; };
 		50906A3A267CA5D6009B3CA9 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A38267CA5D6009B3CA9 /* CountryTableViewCell.swift */; };
@@ -43,7 +46,6 @@
 		50906A94267CABA5009B3CA9 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A93267CABA5009B3CA9 /* ErrorHandling.swift */; };
 		50906AB1267CB0EA009B3CA9 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906AB0267CB0EA009B3CA9 /* AppError.swift */; };
 		50906AD0267CC5F6009B3CA9 /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906ACF267CC5F6009B3CA9 /* CoredataManager.swift */; };
-		50906AD8267CC68B009B3CA9 /* CoredataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906AD7267CC68B009B3CA9 /* CoredataHelpers.swift */; };
 		50906ADE267CC6CB009B3CA9 /* AppEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906ADD267CC6CB009B3CA9 /* AppEndpoint.swift */; };
 		50E06F4F267BA39B00EBC7B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E06F4E267BA39B00EBC7B3 /* AppDelegate.swift */; };
 		50E06F51267BA39B00EBC7B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E06F50267BA39B00EBC7B3 /* SceneDelegate.swift */; };
@@ -101,7 +103,6 @@
 		5047268C267CF89600E5F84E /* CalculatorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorRouter.swift; sourceTree = "<group>"; };
 		50472691267CF8A300E5F84E /* CalculatorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorConfigurator.swift; sourceTree = "<group>"; };
 		50472697267D03DD00E5F84E /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
-		5047269F267D065C00E5F84E /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		504726A5267D17BE00E5F84E /* ExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
 		504726AA267D181E00E5F84E /* DatabaseManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManageable.swift; sourceTree = "<group>"; };
 		506D527C267DB5F500C437BC /* CurrentCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCountry.swift; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 		50906A93267CABA5009B3CA9 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
 		50906AB0267CB0EA009B3CA9 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		50906ACF267CC5F6009B3CA9 /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
-		50906AD7267CC68B009B3CA9 /* CoredataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataHelpers.swift; sourceTree = "<group>"; };
 		50906ADD267CC6CB009B3CA9 /* AppEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEndpoint.swift; sourceTree = "<group>"; };
 		50E06F4B267BA39B00EBC7B3 /* currency-converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "currency-converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E06F4E267BA39B00EBC7B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -249,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				50906ACF267CC5F6009B3CA9 /* CoredataManager.swift */,
-				50906AD7267CC68B009B3CA9 /* CoredataHelpers.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -399,7 +398,6 @@
 			children = (
 				50472639267CED5900E5F84E /* Utilities.swift */,
 				50472641267CF65E00E5F84E /* StringExtension.swift */,
-				5047269F267D065C00E5F84E /* UserDefaultsKey.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -507,6 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506D52B0267E0EAF00C437BC /* Countries.json in Resources */,
 				50E06F5E267BA39D00EBC7B3 /* LaunchScreen.storyboard in Resources */,
 				50E06F99267BA97A00EBC7B3 /* PickerTableViewCell.xib in Resources */,
 				50E06F5B267BA39D00EBC7B3 /* Assets.xcassets in Resources */,
@@ -519,6 +518,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506D529F267E0E1800C437BC /* RateResponseFail.json in Resources */,
+				506D5297267E0E1400C437BC /* RateResponseSuccess.json in Resources */,
+				506D528F267E0E0E00C437BC /* Countries.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,7 +544,6 @@
 				5047261C267CE6BD00E5F84E /* RateService.swift in Sources */,
 				50E06F98267BA97A00EBC7B3 /* PickerTableViewCell.swift in Sources */,
 				504726A6267D17BE00E5F84E /* ExchangeRates.swift in Sources */,
-				50906AD8267CC68B009B3CA9 /* CoredataHelpers.swift in Sources */,
 				50906AD0267CC5F6009B3CA9 /* CoredataManager.swift in Sources */,
 				506D5282267DB60100C437BC /* CurrentCurrency.swift in Sources */,
 				50E06F91267BA95000EBC7B3 /* PickerViewController.swift in Sources */,
@@ -570,7 +571,6 @@
 				50E06F59267BA39B00EBC7B3 /* currency_converter.xcdatamodeld in Sources */,
 				50906A94267CABA5009B3CA9 /* ErrorHandling.swift in Sources */,
 				50472624267CE8E300E5F84E /* RatesResponse.swift in Sources */,
-				504726A0267D065C00E5F84E /* UserDefaultsKey.swift in Sources */,
 				50906A4A267CA7DF009B3CA9 /* CountryManager.swift in Sources */,
 				50E06F4F267BA39B00EBC7B3 /* AppDelegate.swift in Sources */,
 				50472650267CF7D000E5F84E /* CountriesRouter.swift in Sources */,

@@ -12,6 +12,8 @@
     <entity name="CurrentCurrency" representedClassName=".CurrentCurrency" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="rate" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
@@ -22,7 +24,7 @@
         <attribute name="code" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="rates" optional="YES" attributeType="Transformable"/>
-        <attribute name="timestamp" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="code"/>
@@ -33,6 +35,6 @@
     <elements>
         <element name="ExchangeRates" positionX="-63" positionY="-18" width="128" height="89"/>
         <element name="CurrentCountry" positionX="-63" positionY="9" width="128" height="59"/>
-        <element name="CurrentCurrency" positionX="-54" positionY="18" width="128" height="59"/>
+        <element name="CurrentCurrency" positionX="-54" positionY="18" width="128" height="89"/>
     </elements>
 </model>

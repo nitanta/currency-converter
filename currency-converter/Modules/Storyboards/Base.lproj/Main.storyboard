@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xy-Bp-ZtQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xy-Bp-ZtQ">
                                 <rect key="frame" x="20" y="148" width="374" height="54"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="46"/>
                                 <nil key="textColor"/>
@@ -368,6 +368,9 @@
                             <constraint firstItem="gA1-7j-dY0" firstAttribute="trailing" secondItem="I8t-LF-H5t" secondAttribute="trailing" id="TzE-8s-KbZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="I8t-LF-H5t" id="bda-qF-SJE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjv-M0-gKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

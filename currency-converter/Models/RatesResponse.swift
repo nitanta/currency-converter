@@ -23,7 +23,8 @@ struct RatesResponse: Codable {
 
 struct ErrorMessage: Codable {
     let code: Int
-    let type, info: String
+    let type: String?
+    let info: String
 }
 
 extension RatesResponse {

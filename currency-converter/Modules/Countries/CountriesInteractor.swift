@@ -19,11 +19,14 @@ protocol CountriesInteractorOutput: AnyObject {
 final class CountriesInteractor {
     var presenter: CountriesPresenterInput?
     var worker: CountriesWorker?
+    
+    let database = CoreDataManager.shared
 }
 
 extension CountriesInteractor: CountriesInteractorInput {
     func selectCountry(code: String) {
-        UserDefaults.standard.set(code, forKey: UserDefaultsKey.currencyCode)
+        _ = CurrentCountry.saveCountryCode(code)
+        database.saveContext()
         presenter?.goBack()
     }
     

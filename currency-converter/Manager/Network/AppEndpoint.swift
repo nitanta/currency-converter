@@ -50,7 +50,7 @@ enum AppEndpoint: EndpointProtocol {
     var params: [String: Any] {
         switch self {
         case .fetchRates(let code):
-            return ["access_key": Global.apiKey, "currencies": code]
+            return ["access_key": Global.apiKey, "source": code]
         }
     }
     

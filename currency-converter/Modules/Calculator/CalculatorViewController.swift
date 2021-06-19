@@ -9,13 +9,15 @@ import UIKit
 
 protocol CalculatorViewControllerInput: AnyObject {
     func showDefaultCountry(code: String)
-    func showDefaultCurrencyRate(code: String, rate: Double)
+    func showDefaultCurrencyRate(code: String, source: String, rate: Double)
     func showLoader(show: Bool)
     func showError(message: String)
     func showConvertedValue(value: String)
 }
 
 protocol CalculatorViewControllerOutput: AnyObject {
+    func loadCurrentCountry()
+    func loadCurrentRate()
     func loadRates()
     func convertCurrency()
 }
@@ -38,19 +40,16 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        output?.loadRates()
+        setupData()
     }
     
     private func setupViews() {
         
     }
-
-    private func checkForCountryCode() -> String {
-        guard let code = UserDefaults.standard.string(forKey: UserDefaultsKey.currencyCode) else {
-            UserDefaults.standard.set(Global.defaultCode, forKey: UserDefaultsKey.currencyCode)
-            return Global.defaultCode
-        }
-        return code
+    
+    private func setupData() {
+        output?.loadCurrentCountry()
+        output?.loadRates()
     }
     
     @objc func barButtonTapped() {
@@ -59,6 +58,9 @@ class CalculatorViewController: UIViewController {
 }
 
 extension CalculatorViewController: CalculatorViewControllerInput {
+    func showDefaultCurrencyRate(code: String, source: String, rate: Double) {
+        selectedCodeBtn.setTitle("\(rate) = \(code)", for: .normal)
+    }
     
     func showDefaultCountry(code: String) {
         let codeButton = UIBarButtonItem(title: code, style: .plain, target: self, action: #selector(barButtonTapped))
@@ -68,10 +70,6 @@ extension CalculatorViewController: CalculatorViewControllerInput {
     
     func showConvertedValue(value: String) {
         convertedValueLbl.text = value
-    }
-    
-    func showDefaultCurrencyRate(code: String, rate: Double) {
-        selectedCodeBtn.setTitle("\(rate) = \(code)", for: .normal)
     }
     
     func showLoader(show: Bool) {}

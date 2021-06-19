@@ -11,7 +11,6 @@ class PickerTableViewCell: UITableViewCell {
 
     static let identifer: String = "PickerTableViewCell"
 
-    @IBOutlet weak var countryNameLbl: UILabel!
     @IBOutlet weak var currencyCodeLbl: UILabel!
     @IBOutlet weak var currencyValueLbl: UILabel!
     
@@ -23,7 +22,9 @@ class PickerTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure() {
+    func configure(code: String, value: Double) {
+        self.currencyCodeLbl.text = code
+        self.currencyValueLbl.text = "\(value)"
     }
     
 }

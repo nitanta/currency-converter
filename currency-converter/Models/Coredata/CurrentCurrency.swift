@@ -17,8 +17,10 @@ class CurrentCurrency: NSManagedObject, DatabaseManageable {
 
     @NSManaged var id: String
     @NSManaged var code: String
+    @NSManaged var source: String
+    @NSManaged var rate: Double
     
-    static func saveCurrencyCode(_ code: String) -> CurrentCurrency {
+    static func saveCurrencyCode(_ code: String, source: String, rate: Double) -> CurrentCurrency {
         let localCurrency: CurrentCurrency!
         if let currency = findFirst(predicate: NSPredicate(format: "id == %@", "CURRENCY"), type: CurrentCurrency.self) {
             localCurrency = currency
@@ -28,11 +30,18 @@ class CurrentCurrency: NSManagedObject, DatabaseManageable {
         
         localCurrency.id = "CURRENCY"
         localCurrency.code = code
+        localCurrency.source = source
+        localCurrency.rate = rate
         return localCurrency
     }
     
     static func hasCurrencySaved() -> Bool {
         let currency = findFirst(predicate: NSPredicate(format: "id == %@", "CURRENCY"), type: CurrentCurrency.self)
         return currency != nil
+    }
+    
+    static func findCurrencySaved() -> CurrentCurrency? {
+        let currency = findFirst(predicate: NSPredicate(format: "id == %@", "CURRENCY"), type: CurrentCurrency.self)
+        return currency
     }
 }

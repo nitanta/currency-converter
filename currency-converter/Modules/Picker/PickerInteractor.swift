@@ -19,17 +19,20 @@ protocol PickerInteractorOutput: AnyObject {
 final class PickerInteractor {
     var presenter: PickerPresenterInput?
     var worker: PickerWorker?
+    
+    let database = CoreDataManager.shared
 }
 
 extension PickerInteractor: PickerInteractorInput {
     func loadRates() {
+        showSavedRates()
         presenter?.showLoader(show: true)
         worker?.fetchRates(completion: { [weak self] (result) in
             guard let self = self else { return }
             self.presenter?.showLoader(show: false)
             switch result {
-            case .success(let lists):
-                self.presenter?.showRatesList(list: lists)
+            case .success:
+                self.showSavedRates()
             case .failure(let error):
                 self.presenter?.showFailure(message: error.localizedDescription)
             }
@@ -37,8 +40,23 @@ extension PickerInteractor: PickerInteractorInput {
     }
     
     func selectRate(code: String, rate: Double) {
-        //UserDefaults.standard.set(code, forKey: UserDefaultsKey.currencyCode)
+        let currentCode = getCurrentCode()
+        _ = CurrentCurrency.saveCurrencyCode(code, source: currentCode, rate: rate)
+        database.saveContext()
         presenter?.goBack()
     }
     
+    private func showSavedRates() {
+        let currentCode = getCurrentCode()
+        if let rates = ExchangeRates.getRates(code: currentCode) {
+            self.presenter?.showRatesList(list: rates.rates)
+        }
+    }
+    
+    private func getCurrentCode() -> String {
+        guard let country = CurrentCountry.findCountrySaved() else {
+            return Global.defaultCode
+        }
+        return country.code
+    }
 }

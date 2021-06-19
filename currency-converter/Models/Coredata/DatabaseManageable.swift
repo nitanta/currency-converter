@@ -19,12 +19,13 @@ extension DatabaseManageable {
     }
     
     static func findFirst<T: NSManagedObject>(predicate: NSPredicate?, type: T.Type) -> T? {
-        let request = T.fetchRequest()
+        let entityName = String(describing: T.self)
+        let request = NSFetchRequest<T>(entityName: entityName)
         request.fetchLimit = 1
         request.predicate = predicate
         do {
             guard let data = try database.managedObjectContext.fetch(request).first else { return nil }
-            return data as? T
+            return data
         } catch {
             return nil
         }

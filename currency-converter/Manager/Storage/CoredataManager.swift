@@ -42,7 +42,9 @@ class CoreDataManager {
     func deleteData() {
         let manager = CoreDataManager.shared
         manager.clearEntities(entities: [
-            //String(describing: LocalMessage.self),
+            String(describing: ExchangeRates.self),
+            String(describing: CurrentCountry.self),
+            String(describing: CurrentCurrency.self),
         ])
     }    
     

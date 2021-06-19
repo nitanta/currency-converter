@@ -24,11 +24,11 @@ extension CalculatorPresenter: CalculatorPresenterInput {
     }
     
     func showDefaultCountry(code: String) {
-        viewController?.showDefaultCountry(code: "USD")
+        viewController?.showDefaultCountry(code: code)
     }
     
-    func showDefaultCurrencyRate(code: String, rate: Double) {
-        viewController?.showDefaultCurrencyRate(code: "USD", rate: 23.0)
+    func showDefaultCurrencyRate(code: String, source: String, rate: Double) {
+        viewController?.showDefaultCurrencyRate(code: code, source: source, rate: 23.0)
     }
     
     func showLoader(show: Bool) {

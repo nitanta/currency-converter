@@ -31,8 +31,20 @@ class ExchangeRates: NSManagedObject, DatabaseManageable {
         localRates.id = rates.source.safeUnwrapped
         localRates.code = rates.source.safeUnwrapped
         localRates.timestamp = Date(timeIntervalSince1970: TimeInterval(rates.timestamp ?? 0))
-        localRates.rates = rates.quotes ?? [:]
+        if let quotes = rates.quotes {
+            var formattedQuotes: [String: Double] = [:]
+            quotes.forEach {
+                var sourceKey = $0.key
+                sourceKey.removeFirst(rates.source.safeUnwrapped.count)
+                formattedQuotes[sourceKey] = $0.value
+            }
+            localRates.rates = formattedQuotes
+        }
         return localRates
     }
     
+    static func getRates(code: String) -> ExchangeRates? {
+        let excRate = findFirst(predicate: NSPredicate(format: "id == %@", code), type: ExchangeRates.self)
+        return excRate
+    }
 }

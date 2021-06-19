@@ -21,7 +21,7 @@ protocol PickerViewControllerOutput: AnyObject {
 
 class PickerViewController: UIViewController {
 
-    var rates: [String] = []
+    var rates: [(code: String, value: Double)] = []
     var output: PickerInteractorInput?
     var router: PickerRoutingLogic?
     
@@ -56,7 +56,7 @@ extension PickerViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         let item = rates[indexPath.row]
-        cell.configure()
+        cell.configure(code: item.code, value: item.value)
         return cell
     }
     
@@ -69,7 +69,7 @@ extension PickerViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension PickerViewController: PickerViewControllerInput {
     func showRateList(list: [String : Double]) {
-        rates = []
+        rates = list.map { (code: $0.key, value: $0.value) }
         tableView.reloadData()
     }
     

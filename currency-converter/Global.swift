@@ -9,7 +9,7 @@ import Foundation
 
 struct Global {
     static var baseUrl: String{
-       return "https://api.currencylayer.com"
+       return "http://api.currencylayer.com"
     }
     static var apiKey: String {
         return "72cb1057044dd201006fc5bc22868181"

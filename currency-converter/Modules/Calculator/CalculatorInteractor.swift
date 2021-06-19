@@ -13,16 +13,19 @@ protocol CalculatorInteractorOutput: AnyObject {
     func showFailure(message: String)
     func showConvertedData(value: String)
     func showDefaultCountry(code: String)
-    func showDefaultCurrencyRate(code: String, rate: Double)
+    func showDefaultCurrencyRate(code: String, source: String, rate: Double)
     func showLoader(show: Bool)
 }
 
 final class CalculatorInteractor {
     var presenter: CalculatorPresenterInput?
     var worker: PickerWorker?
+    
+    let database = CoreDataManager.shared
 }
 
 extension CalculatorInteractor: CalculatorInteractorInput {
+    
     func convertCurrency() {
         presenter?.showConvertedData(value: "100")
     }
@@ -33,12 +36,43 @@ extension CalculatorInteractor: CalculatorInteractorInput {
             guard let self = self else { return }
             self.presenter?.showLoader(show: false)
             switch result {
-            case .success(let lists):
+            case .success:
                 break
             case .failure(let error):
                 self.presenter?.showFailure(message: error.localizedDescription)
             }
         })
     }
+    
+    func loadCurrentCountry() {
+        if CurrentCountry.hasCountrySaved(), let country = CurrentCountry.findCountrySaved() {
+            presenter?.showDefaultCountry(code: country.code)
+        } else {
+            _ = CurrentCountry
+                .saveCountryCode(Global.defaultCode)
+            database.saveContext()
+            presenter?.showDefaultCountry(code: Global.defaultCode)
+        }
+    }
+    
+    func loadCurrentRate() {
+        if let currentSavedRate = CurrentCurrency.findCurrencySaved() {
+            presenter?.showDefaultCurrencyRate(code: currentSavedRate.code, source: currentSavedRate.source, rate: currentSavedRate.rate)
+        } else {
+            let currentCode = self.getCurrentCode()
+            guard let rates = ExchangeRates.getRates(code: currentCode), let firstRate = rates.rates.first else { return }
+            _ = CurrentCurrency.saveCurrencyCode(firstRate.key, source: currentCode, rate: firstRate.value)
+            database.saveContext()
+            presenter?.showDefaultCurrencyRate(code: firstRate.key, source: currentCode, rate: firstRate.value)
+        }
+    }
+    
+    private func getCurrentCode() -> String {
+        guard let country = CurrentCountry.findCountrySaved() else {
+            return Global.defaultCode
+        }
+        return country.code
+    }
+    
     
 }

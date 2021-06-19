@@ -36,4 +36,9 @@ class CurrentCountry: NSManagedObject, DatabaseManageable {
         return country != nil
     }
     
+    static func findCountrySaved() -> CurrentCountry? {
+        let country = findFirst(predicate: NSPredicate(format: "id == %@", "COUNTRY"), type: CurrentCountry.self)
+        return country
+    }
+    
 }

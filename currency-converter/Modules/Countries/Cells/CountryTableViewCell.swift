@@ -25,7 +25,7 @@ class CountryTableViewCell: UITableViewCell {
     
     func configure(data: CountryResponse) {
         self.countryCodeLbl.text = data.code
-        self.emojiLbl.text = data.unicode
+        self.emojiLbl.text = data.emoji
         self.countryNameLbl.text = data.name
     }
     

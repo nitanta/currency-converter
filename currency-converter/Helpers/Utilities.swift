@@ -30,5 +30,27 @@ struct Utilities {
         let data = try! Data(contentsOf: url)
         return data
     }
+    
+    static var getFilePath: String {
+        let urls = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
+        return "FILE PATH: \(urls.last)"
+    }
+    
+    static func navigationBarCustomize() {
+       let appearance = UINavigationBarAppearance()
+       appearance.configureWithTransparentBackground()
+       appearance.largeTitleTextAttributes = [
+        .font : UIFont(name: "Menlo-Bold", size: 32) as Any,
+        NSAttributedString.Key.foregroundColor : UIColor.black
+       ]
+       appearance.titleTextAttributes = [
+        .font : UIFont(name: "Menlo-Bold", size: 24) as Any,
+        NSAttributedString.Key.foregroundColor : UIColor.black
+       ]
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().tintColor = .black
+        UINavigationBar.appearance().backgroundColor = .clear
+    }
        
 }
