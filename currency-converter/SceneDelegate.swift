@@ -10,10 +10,18 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var sceneFactory: DefaultSceneFactory!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        sceneFactory = DefaultSceneFactory()
+        sceneFactory.calculatorConfigurator = DefaultCalculatorConfigurator(sceneFactory: sceneFactory)
+        let navController = UINavigationController(rootViewController: sceneFactory.makeCalculatorScene())
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

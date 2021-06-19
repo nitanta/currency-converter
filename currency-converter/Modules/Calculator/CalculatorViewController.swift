@@ -7,11 +7,28 @@
 
 import UIKit
 
+protocol CalculatorViewControllerInput: AnyObject {
+    func showDefaultCountry(code: String)
+    func showDefaultCurrencyRate(code: String, rate: Double)
+    func showLoader(show: Bool)
+    func showError(message: String)
+    func showConvertedValue(value: String)
+}
+
+protocol CalculatorViewControllerOutput: AnyObject {
+    func loadRates()
+    func convertCurrency()
+}
+
 class CalculatorViewController: UIViewController {
 
+    var output: CalculatorInteractorInput?
+    var router: CalculatorRoutingLogic?
+    
     @IBOutlet weak var selectedCodeBtn: UIButton!
     @IBOutlet weak var convertedValueLbl: UILabel!
     @IBAction func selectedBodeBtnTap(_ sender: Any) {
+        router?.showCurrencyRatePicker()
     }
     
     @IBOutlet var numberBtns: [UIButton]!
@@ -21,15 +38,10 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        output?.loadRates()
     }
     
     private func setupViews() {
-        let codeButton = UIBarButtonItem(title: checkForCountryCode(), style: .plain, target: self, action: #selector(barButtonTapped))
-        codeButton.tintColor = .black
-        self.navigationItem.rightBarButtonItem = codeButton
-    }
-
-    @objc func barButtonTapped() {
         
     }
 
@@ -40,5 +52,33 @@ class CalculatorViewController: UIViewController {
         }
         return code
     }
+    
+    @objc func barButtonTapped() {
+        router?.showCountryPicker()
+    }
+}
+
+extension CalculatorViewController: CalculatorViewControllerInput {
+    
+    func showDefaultCountry(code: String) {
+        let codeButton = UIBarButtonItem(title: code, style: .plain, target: self, action: #selector(barButtonTapped))
+        codeButton.tintColor = .black
+        self.navigationItem.rightBarButtonItem = codeButton
+    }
+    
+    func showConvertedValue(value: String) {
+        convertedValueLbl.text = value
+    }
+    
+    func showDefaultCurrencyRate(code: String, rate: Double) {
+        selectedCodeBtn.setTitle("\(rate) = \(code)", for: .normal)
+    }
+    
+    func showLoader(show: Bool) {}
+    
+    func showError(message: String) {
+        router?.showFailure(message: message)
+    }
+    
 }
 

@@ -10,6 +10,7 @@ import Foundation
 typealias PickerInteractorInput = PickerViewControllerOutput
 
 protocol PickerInteractorOutput: AnyObject {
+    func showLoader(show: Bool)
     func showRatesList(list: [String: Double])
     func showFailure(message: String)
     func goBack()
@@ -22,8 +23,10 @@ final class PickerInteractor {
 
 extension PickerInteractor: PickerInteractorInput {
     func loadRates() {
+        presenter?.showLoader(show: true)
         worker?.fetchRates(completion: { [weak self] (result) in
             guard let self = self else { return }
+            self.presenter?.showLoader(show: false)
             switch result {
             case .success(let lists):
                 self.presenter?.showRatesList(list: lists)

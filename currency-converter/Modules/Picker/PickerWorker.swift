@@ -12,6 +12,7 @@ class PickerWorker {
     
     private var bag = Set<AnyCancellable>()
 
+    let database = CoreDataManager.shared
     let rateManager: RatesServiceProtocol
     init(manager: RatesServiceProtocol) {
         self.rateManager = manager
@@ -31,6 +32,8 @@ class PickerWorker {
                     completion(.failure(APIProviderErrors.dataNil))
                     return
                 }
+                _ = ExchangeRates.saveRates(response)
+                self.database.saveContext()
                 completion(.success(rates))
             } else {
                 let errorMessage = response.errorMessage?.info

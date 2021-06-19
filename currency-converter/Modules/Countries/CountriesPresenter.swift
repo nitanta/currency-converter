@@ -15,6 +15,9 @@ final class CountriesPresenter {
 }
 
 extension CountriesPresenter: CountriesPresenterInput {
+    func showLoader(show: Bool) {
+        viewController?.showLoader(show: show)
+    }
     
     func goBack() {
         viewController?.goBack()

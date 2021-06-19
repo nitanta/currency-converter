@@ -30,6 +30,10 @@
 		50472692267CF8A300E5F84E /* CalculatorConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50472691267CF8A300E5F84E /* CalculatorConfigurator.swift */; };
 		50472698267D03DD00E5F84E /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50472697267D03DD00E5F84E /* SceneFactory.swift */; };
 		504726A0267D065C00E5F84E /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5047269F267D065C00E5F84E /* UserDefaultsKey.swift */; };
+		504726A6267D17BE00E5F84E /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504726A5267D17BE00E5F84E /* ExchangeRates.swift */; };
+		504726AB267D181E00E5F84E /* DatabaseManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504726AA267D181E00E5F84E /* DatabaseManageable.swift */; };
+		506D527D267DB5F500C437BC /* CurrentCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506D527C267DB5F500C437BC /* CurrentCountry.swift */; };
+		506D5282267DB60100C437BC /* CurrentCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506D5281267DB60100C437BC /* CurrentCurrency.swift */; };
 		50906A24267CA543009B3CA9 /* Countries.json in Sources */ = {isa = PBXBuildFile; fileRef = 50906A23267CA543009B3CA9 /* Countries.json */; };
 		50906A31267CA5B5009B3CA9 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A30267CA5B5009B3CA9 /* CountriesViewController.swift */; };
 		50906A3A267CA5D6009B3CA9 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A38267CA5D6009B3CA9 /* CountryTableViewCell.swift */; };
@@ -98,6 +102,10 @@
 		50472691267CF8A300E5F84E /* CalculatorConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorConfigurator.swift; sourceTree = "<group>"; };
 		50472697267D03DD00E5F84E /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
 		5047269F267D065C00E5F84E /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		504726A5267D17BE00E5F84E /* ExchangeRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
+		504726AA267D181E00E5F84E /* DatabaseManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManageable.swift; sourceTree = "<group>"; };
+		506D527C267DB5F500C437BC /* CurrentCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCountry.swift; sourceTree = "<group>"; };
+		506D5281267DB60100C437BC /* CurrentCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCurrency.swift; sourceTree = "<group>"; };
 		50906A23267CA543009B3CA9 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
 		50906A30267CA5B5009B3CA9 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		50906A38267CA5D6009B3CA9 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +180,17 @@
 				50472697267D03DD00E5F84E /* SceneFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		504726A4267D17A900E5F84E /* Coredata */ = {
+			isa = PBXGroup;
+			children = (
+				504726A5267D17BE00E5F84E /* ExchangeRates.swift */,
+				504726AA267D181E00E5F84E /* DatabaseManageable.swift */,
+				506D527C267DB5F500C437BC /* CurrentCountry.swift */,
+				506D5281267DB60100C437BC /* CurrentCurrency.swift */,
+			);
+			path = Coredata;
 			sourceTree = "<group>";
 		};
 		50906A2E267CA591009B3CA9 /* Countries */ = {
@@ -366,6 +385,7 @@
 		50E06FA2267BAF9000EBC7B3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				504726A4267D17A900E5F84E /* Coredata */,
 				50472628267CECCC00E5F84E /* JSON */,
 				50906A40267CA70A009B3CA9 /* CountryResponse.swift */,
 				50472623267CE8E300E5F84E /* RatesResponse.swift */,
@@ -518,10 +538,13 @@
 			files = (
 				50472676267CF84A00E5F84E /* PickerConfigurator.swift in Sources */,
 				50E06FA7267BB07300EBC7B3 /* Global.swift in Sources */,
+				506D527D267DB5F500C437BC /* CurrentCountry.swift in Sources */,
 				5047261C267CE6BD00E5F84E /* RateService.swift in Sources */,
 				50E06F98267BA97A00EBC7B3 /* PickerTableViewCell.swift in Sources */,
+				504726A6267D17BE00E5F84E /* ExchangeRates.swift in Sources */,
 				50906AD8267CC68B009B3CA9 /* CoredataHelpers.swift in Sources */,
 				50906AD0267CC5F6009B3CA9 /* CoredataManager.swift in Sources */,
+				506D5282267DB60100C437BC /* CurrentCurrency.swift in Sources */,
 				50E06F91267BA95000EBC7B3 /* PickerViewController.swift in Sources */,
 				5047266C267CF82B00E5F84E /* PickerPresenter.swift in Sources */,
 				5047263A267CED5900E5F84E /* Utilities.swift in Sources */,
@@ -553,6 +576,7 @@
 				50472650267CF7D000E5F84E /* CountriesRouter.swift in Sources */,
 				50906ADE267CC6CB009B3CA9 /* AppEndpoint.swift in Sources */,
 				50472632267CECFF00E5F84E /* RateResponseFail.json in Sources */,
+				504726AB267D181E00E5F84E /* DatabaseManageable.swift in Sources */,
 				50472614267CE53200E5F84E /* APIProvider.swift in Sources */,
 				50E06F51267BA39B00EBC7B3 /* SceneDelegate.swift in Sources */,
 				50472662267CF80D00E5F84E /* CountriesWorker.swift in Sources */,

@@ -15,6 +15,10 @@ final class PickerPresenter {
 }
 
 extension PickerPresenter: PickerPresenterInput {
+    func showLoader(show: Bool) {
+        viewController?.showLoader(show: show)
+    }
+    
     func showRatesList(list: [String : Double]) {
         viewController?.showRateList(list: list)
     }
