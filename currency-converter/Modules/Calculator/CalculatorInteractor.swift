@@ -39,7 +39,9 @@ extension CalculatorInteractor: CalculatorInteractorInput {
             self.presenter?.showLoader(show: false)
             switch result {
             case .success:
-                break
+                if !CurrentCurrency.hasCurrencySaved() {
+                    self.loadCurrentRate()
+                }
             case .failure(let error):
                 self.presenter?.showFailure(message: error.localizedDescription)
             }
@@ -58,10 +60,11 @@ extension CalculatorInteractor: CalculatorInteractorInput {
     }
     
     func loadCurrentRate() {
+        let currentCode = self.getCurrentCode()
         if let currentSavedRate = CurrentCurrency.findCurrencySaved() {
+            guard currentSavedRate.source == currentCode else { return }
             presenter?.showDefaultCurrencyRate(code: currentSavedRate.code, source: currentSavedRate.source, rate: currentSavedRate.rate)
         } else {
-            let currentCode = self.getCurrentCode()
             guard let rates = ExchangeRates.getRates(code: currentCode), let firstRate = rates.rates.first else { return }
             _ = CurrentCurrency.saveCurrencyCode(firstRate.key, source: currentCode, rate: firstRate.value)
             database.saveContext()

@@ -12,6 +12,7 @@ enum APIErrors: Int, LocalizedError {
     case unAuthorized = 401
     case serverError = 500
     case notFound = 404
+    case noInternet = -1009
     
     var errorDescription: String? {
         switch self {
@@ -23,6 +24,8 @@ enum APIErrors: Int, LocalizedError {
             return "Bad request."
         case .unAuthorized:
             return "Unauthorized request."
+        case .noInternet:
+            return "The Internet connection appears to be offline."
         }
     }
 }

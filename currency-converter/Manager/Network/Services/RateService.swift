@@ -26,7 +26,7 @@ class RatesService: RatesServiceProtocol {
         .decode(type: RatesResponse.self, decoder: Container.jsonDecoder)
         .receive(on: RunLoop.main)
         .mapError({ error -> Error in
-            return APIProviderErrors.decodingError
+            return error
         })
         .map{
             return $0
