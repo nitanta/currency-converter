@@ -44,4 +44,9 @@ class CurrentCurrency: NSManagedObject, DatabaseManageable {
         let currency = findFirst(predicate: NSPredicate(format: "id == %@", "CURRENCY"), type: CurrentCurrency.self)
         return currency
     }
+    
+    static func updateRate(rate: Double) {
+        guard let currency = findFirst(predicate: NSPredicate(format: "id == %@", "CURRENCY"), type: CurrentCurrency.self) else { return }
+        currency.rate = rate
+    }
 }

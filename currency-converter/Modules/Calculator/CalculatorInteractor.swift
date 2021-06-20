@@ -39,7 +39,7 @@ extension CalculatorInteractor: CalculatorInteractorInput {
         guard let dbWorker = self.dbWorker else { return }
         
         presenter?.showLoader(show: true)
-        let currentCode = dbWorker.getCurrentCode()
+        let currentCode = dbWorker.getCurrentCountryCode()
         worker?.fetchRates(forCountryCode: currentCode, completion: { [weak self] (result) in
             guard let self = self else { return }
             self.presenter?.showLoader(show: false)

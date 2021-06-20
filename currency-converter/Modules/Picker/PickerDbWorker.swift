@@ -13,12 +13,12 @@ class PickerDbWorker {
     init() {}
     
     func getSavedRates() -> ExchangeRates? {
-        let currentCode = getCurrentCode()
+        let currentCode = getCurrentCountryCode()
         let rates = ExchangeRates.getRates(code: currentCode)
         return rates
     }
     
-    func getCurrentCode() -> String {
+    func getCurrentCountryCode() -> String {
         guard let country = CurrentCountry.findCountrySaved() else {
             return Global.defaultCode
         }
@@ -26,7 +26,7 @@ class PickerDbWorker {
     }
     
     func saveCurrentRate(code: String, rate: Double) {
-        let currentCode = getCurrentCode()
+        let currentCode = getCurrentCountryCode()
         _ = CurrentCurrency.saveCurrencyCode(code, source: currentCode, rate: rate)
         database.saveContext()
     }
@@ -48,7 +48,7 @@ class PickerDbWorker {
     }
     
     func loadSavedRate() -> (code: String, source: String, rate: Double)? {
-        let currentCode = self.getCurrentCode()
+        let currentCode = self.getCurrentCountryCode()
         if let currentSavedRate = CurrentCurrency.findCurrencySaved() {
             guard currentSavedRate.source == currentCode else { return nil }
             return (code: currentSavedRate.code, source: currentSavedRate.source, rate: currentSavedRate.rate)
@@ -58,12 +58,22 @@ class PickerDbWorker {
     }
     
     func saveNewRate() -> (code: String, source: String, rate: Double)? {
-        let currentCode = self.getCurrentCode()
+        let currentCode = self.getCurrentCountryCode()
         return saveDefaultRate(currentCode: currentCode)
     }
     
     func hasCurrentRateSaved() -> Bool {
         return CurrentCurrency.hasCurrencySaved()
+    }
+    
+    func getCurrentCurrencyCode() -> String? {
+        guard let rate = CurrentCurrency.findCurrencySaved() else { return nil }
+        return rate.code
+    }
+    
+    func updateCurrentCurrencyRate(rate: Double) {
+        CurrentCurrency.updateRate(rate: rate)
+        database.saveContext()
     }
     
     private func saveDefaultRate(currentCode: String) -> (code: String, source: String, rate: Double)? {

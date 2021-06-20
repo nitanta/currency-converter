@@ -30,7 +30,7 @@ extension PickerInteractor: PickerInteractorInput {
         guard let dbWorker = dbWorker else { return }
         presenter?.showLoader(show: true)
         
-        let countryCode = dbWorker.getCurrentCode()
+        let countryCode = dbWorker.getCurrentCountryCode()
         worker?.fetchRates(forCountryCode: countryCode,completion: { [weak self] (result) in
             guard let self = self else { return }
             self.presenter?.showLoader(show: false)
