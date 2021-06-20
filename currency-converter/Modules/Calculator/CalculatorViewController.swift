@@ -18,7 +18,7 @@ protocol CalculatorViewControllerInput: AnyObject {
 protocol CalculatorViewControllerOutput: AnyObject {
     func loadCurrentCountry()
     func loadCurrentRate()
-    func loadRates()
+    func loadRates(reload: Bool)
     func convertCurrency(value: Int)
 }
 
@@ -63,7 +63,7 @@ class CalculatorViewController: UIViewController {
     private func setupData() {
         output?.loadCurrentCountry()
         output?.loadCurrentRate()
-        output?.loadRates()
+        output?.loadRates(reload: false)
     }
     
     @objc func barButtonTapped() {
@@ -123,8 +123,9 @@ extension CalculatorViewController: PickerViewControllerParentOutput {
 
 extension CalculatorViewController: CountriesViewControllerParentOutput {
     func reloadCountry() {
+        selectedCodeBtn.isHidden = true
         output?.loadCurrentCountry()
-        output?.loadRates()
+        output?.loadRates(reload: true)
     }
 }
 

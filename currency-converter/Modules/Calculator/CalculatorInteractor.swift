@@ -25,21 +25,29 @@ final class CalculatorInteractor {
 
 extension CalculatorInteractor: CalculatorInteractorInput {
     func convertCurrency(value: Int) {
-        if let currentRate = CurrentCurrency.findCurrencySaved() {
+        guard let dbWorker = dbWorker else { return }
+        
+        if let currentRate = dbWorker.loadSavedRate() {
             let convertedValue = Double(value) * currentRate.rate
             self.presenter?.showConvertedData(value: String(format: "%.0f", convertedValue))
+        } else {
+            self.presenter?.showFailure(message: "Conversion rates not found.")
         }
     }
     
-    func loadRates() {
+    func loadRates(reload: Bool) {
+        guard let dbWorker = self.dbWorker else { return }
+        
         presenter?.showLoader(show: true)
-        worker?.fetchRates(completion: { [weak self] (result) in
+        let currentCode = dbWorker.getCurrentCode()
+        worker?.fetchRates(forCountryCode: currentCode, completion: { [weak self] (result) in
             guard let self = self else { return }
             self.presenter?.showLoader(show: false)
             switch result {
             case .success:
-                guard let dbWorker = self.dbWorker else { return }
-                if !dbWorker.hasCurrencySaved() {
+                if reload {
+                    self.saveNewRate()
+                } else if dbWorker.hasCurrentRateSaved() {
                     self.loadCurrentRate()
                 }
             case .failure(let error):
@@ -59,6 +67,14 @@ extension CalculatorInteractor: CalculatorInteractorInput {
         guard let dbWorker = dbWorker else { return }
         
         if let rate = dbWorker.loadSavedRate() {
+            presenter?.showDefaultCurrencyRate(code: rate.code, source: rate.source, rate: rate.rate)
+        }
+    }
+    
+    func saveNewRate() {
+        guard let dbWorker = dbWorker else { return }
+        
+        if let rate = dbWorker.saveNewRate() {
             presenter?.showDefaultCurrencyRate(code: rate.code, source: rate.source, rate: rate.rate)
         }
     }

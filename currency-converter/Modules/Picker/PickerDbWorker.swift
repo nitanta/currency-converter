@@ -53,14 +53,23 @@ class PickerDbWorker {
             guard currentSavedRate.source == currentCode else { return nil }
             return (code: currentSavedRate.code, source: currentSavedRate.source, rate: currentSavedRate.rate)
         } else {
-            guard let rates = ExchangeRates.getRates(code: currentCode), let firstRate = rates.rates.first else { return nil }
-            _ = CurrentCurrency.saveCurrencyCode(firstRate.key, source: currentCode, rate: firstRate.value)
-            database.saveContext()
-            return (code: firstRate.key, source: currentCode, rate: firstRate.value)
+            return saveDefaultRate(currentCode: currentCode)
         }
     }
     
-    func hasCurrencySaved() -> Bool {
+    func saveNewRate() -> (code: String, source: String, rate: Double)? {
+        let currentCode = self.getCurrentCode()
+        return saveDefaultRate(currentCode: currentCode)
+    }
+    
+    func hasCurrentRateSaved() -> Bool {
         return CurrentCurrency.hasCurrencySaved()
+    }
+    
+    private func saveDefaultRate(currentCode: String) -> (code: String, source: String, rate: Double)? {
+        guard let rates = ExchangeRates.getRates(code: currentCode), let firstRate = rates.rates.first else { return nil }
+        _ = CurrentCurrency.saveCurrencyCode(firstRate.key, source: currentCode, rate: firstRate.value)
+        database.saveContext()
+        return (code: firstRate.key, source: currentCode, rate: firstRate.value)
     }
 }

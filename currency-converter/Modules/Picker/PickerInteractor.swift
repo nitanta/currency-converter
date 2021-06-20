@@ -23,10 +23,15 @@ final class PickerInteractor {
 }
 
 extension PickerInteractor: PickerInteractorInput {
+    
     func loadRates() {
         showSavedRates()
+        
+        guard let dbWorker = dbWorker else { return }
         presenter?.showLoader(show: true)
-        worker?.fetchRates(completion: { [weak self] (result) in
+        
+        let countryCode = dbWorker.getCurrentCode()
+        worker?.fetchRates(forCountryCode: countryCode,completion: { [weak self] (result) in
             guard let self = self else { return }
             self.presenter?.showLoader(show: false)
             switch result {

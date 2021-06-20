@@ -18,9 +18,8 @@ class PickerWorker {
         self.rateManager = manager
     }
     
-    func fetchRates(completion: @escaping (Result<[String: Double], Error>) -> Void) {
-        let currentCode = getCurrentCode()
-        self.rateManager.fetchRates(code: currentCode).sink { (error) in
+    func fetchRates(forCountryCode: String, completion: @escaping (Result<[String: Double], Error>) -> Void) {
+        self.rateManager.fetchRates(code: forCountryCode).sink { (error) in
             switch error {
             case .failure(let error):
                 completion(.failure(APIProviderErrors.customError(error.localizedDescription)))
@@ -41,13 +40,6 @@ class PickerWorker {
             }
         }.store(in: &bag)
 
-    }
-    
-    private func getCurrentCode() -> String {
-        guard let country = CurrentCountry.findCountrySaved() else {
-            return Global.defaultCode
-        }
-        return country.code
     }
 
 }
