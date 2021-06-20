@@ -19,14 +19,14 @@ protocol CountriesInteractorOutput: AnyObject {
 final class CountriesInteractor {
     var presenter: CountriesPresenterInput?
     var worker: CountriesWorker?
-    
-    let database = CoreDataManager.shared
+    var dbWorker: PickerDbWorker?
 }
 
 extension CountriesInteractor: CountriesInteractorInput {
     func selectCountry(code: String) {
-        _ = CurrentCountry.saveCountryCode(code)
-        database.saveContext()
+        guard let dbWorker = dbWorker else { return }
+        
+        dbWorker.saveCountry(code: code)
         presenter?.goBack()
     }
     

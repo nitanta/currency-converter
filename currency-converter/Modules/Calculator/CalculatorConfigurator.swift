@@ -23,6 +23,7 @@ final class DefaultCalculatorConfigurator: CalculatorConfigurator {
         
         sceneFactory.calculatorConfigurator = self
         let worker = PickerWorker(manager: RatesService())
+        let dbWorker = PickerDbWorker()
         let interactor = CalculatorInteractor()
         let presenter = CalculatorPresenter()
         let router = CalculatorRouter(sceneFactory: sceneFactory)
@@ -31,6 +32,7 @@ final class DefaultCalculatorConfigurator: CalculatorConfigurator {
         presenter.viewController = vc
         interactor.presenter = presenter
         interactor.worker = worker
+        interactor.dbWorker = dbWorker
         vc.output = interactor
         vc.router = router
         

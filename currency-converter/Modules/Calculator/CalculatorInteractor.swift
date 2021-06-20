@@ -20,8 +20,7 @@ protocol CalculatorInteractorOutput: AnyObject {
 final class CalculatorInteractor {
     var presenter: CalculatorPresenterInput?
     var worker: PickerWorker?
-    
-    let database = CoreDataManager.shared
+    var dbWorker: PickerDbWorker?
 }
 
 extension CalculatorInteractor: CalculatorInteractorInput {
@@ -39,7 +38,8 @@ extension CalculatorInteractor: CalculatorInteractorInput {
             self.presenter?.showLoader(show: false)
             switch result {
             case .success:
-                if !CurrentCurrency.hasCurrencySaved() {
+                guard let dbWorker = self.dbWorker else { return }
+                if !dbWorker.hasCurrencySaved() {
                     self.loadCurrentRate()
                 }
             case .failure(let error):
@@ -49,34 +49,18 @@ extension CalculatorInteractor: CalculatorInteractorInput {
     }
     
     func loadCurrentCountry() {
-        if CurrentCountry.hasCountrySaved(), let country = CurrentCountry.findCountrySaved() {
-            presenter?.showDefaultCountry(code: country.code)
-        } else {
-            _ = CurrentCountry
-                .saveCountryCode(Global.defaultCode)
-            database.saveContext()
-            presenter?.showDefaultCountry(code: Global.defaultCode)
-        }
+        guard let dbWorker = dbWorker else { return }
+        
+        let currentCountry = dbWorker.loadSavedCountry()
+        presenter?.showDefaultCountry(code: currentCountry.code)
     }
     
     func loadCurrentRate() {
-        let currentCode = self.getCurrentCode()
-        if let currentSavedRate = CurrentCurrency.findCurrencySaved() {
-            guard currentSavedRate.source == currentCode else { return }
-            presenter?.showDefaultCurrencyRate(code: currentSavedRate.code, source: currentSavedRate.source, rate: currentSavedRate.rate)
-        } else {
-            guard let rates = ExchangeRates.getRates(code: currentCode), let firstRate = rates.rates.first else { return }
-            _ = CurrentCurrency.saveCurrencyCode(firstRate.key, source: currentCode, rate: firstRate.value)
-            database.saveContext()
-            presenter?.showDefaultCurrencyRate(code: firstRate.key, source: currentCode, rate: firstRate.value)
+        guard let dbWorker = dbWorker else { return }
+        
+        if let rate = dbWorker.loadSavedRate() {
+            presenter?.showDefaultCurrencyRate(code: rate.code, source: rate.source, rate: rate.rate)
         }
-    }
-    
-    private func getCurrentCode() -> String {
-        guard let country = CurrentCountry.findCountrySaved() else {
-            return Global.defaultCode
-        }
-        return country.code
     }
     
 }

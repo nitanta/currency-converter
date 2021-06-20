@@ -28,7 +28,7 @@ extension CalculatorPresenter: CalculatorPresenterInput {
     }
     
     func showDefaultCurrencyRate(code: String, source: String, rate: Double) {
-        viewController?.showDefaultCurrencyRate(code: code, source: source, rate: 23.0)
+        viewController?.showDefaultCurrencyRate(code: code, source: source, rate: rate)
     }
     
     func showLoader(show: Bool) {

@@ -94,7 +94,7 @@ class CalculatorViewController: UIViewController {
 extension CalculatorViewController: CalculatorViewControllerInput {
     func showDefaultCurrencyRate(code: String, source: String, rate: Double) {
         selectedCodeBtn.isHidden = false
-        selectedCodeBtn.setTitle("\(rate) = \(code)", for: .normal)
+        selectedCodeBtn.setTitle("\(code) = \(rate)", for: .normal)
     }
     
     func showDefaultCountry(code: String) {
@@ -113,5 +113,18 @@ extension CalculatorViewController: CalculatorViewControllerInput {
         router?.showFailure(message: message)
     }
     
+}
+
+extension CalculatorViewController: PickerViewControllerParentOutput {
+    func reloadRates() {
+        output?.loadCurrentRate()
+    }
+}
+
+extension CalculatorViewController: CountriesViewControllerParentOutput {
+    func reloadCountry() {
+        output?.loadCurrentCountry()
+        output?.loadRates()
+    }
 }
 

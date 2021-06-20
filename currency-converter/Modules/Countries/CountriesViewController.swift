@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CountriesViewControllerParentOutput: AnyObject {
+    func reloadCountry()
+}
+
 protocol CountriesViewControllerInput: AnyObject {
     func showCountriesList(list: [CountryResponse])
     func showLoader(show: Bool)
@@ -23,6 +27,7 @@ class CountriesViewController: UIViewController {
 
     var countries: [CountryResponse] = []
     var output: CountriesInteractorInput?
+    var parentOutput: CountriesViewControllerParentOutput?
     var router: CountriesRoutingLogic?
     
     @IBOutlet weak var tableView: UITableView!
@@ -69,6 +74,7 @@ extension CountriesViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension CountriesViewController: CountriesViewControllerInput {
     func goBack() {
+        parentOutput?.reloadCountry()
         router?.goBack()
     }
     

@@ -23,6 +23,7 @@ final class DefaultPickerConfigurator: PickerConfigurator {
         
         sceneFactory.pickerConfigurator = self
         let worker = PickerWorker(manager: RatesService())
+        let dbWorker = PickerDbWorker()
         let interactor = PickerInteractor()
         let presenter = PickerPresenter()
         let router = PickerRouter(sceneFactory: sceneFactory)
@@ -31,6 +32,7 @@ final class DefaultPickerConfigurator: PickerConfigurator {
         presenter.viewController = vc
         interactor.presenter = presenter
         interactor.worker = worker
+        interactor.dbWorker = dbWorker
         vc.output = interactor
         vc.router = router
         

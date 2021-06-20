@@ -23,6 +23,7 @@ final class DefaultCountriesConfigurator: CountriesConfigurator {
         
         sceneFactory.countriesConfigurator = self
         let worker = CountriesWorker(manager: CountryManager())
+        let dbWorker = PickerDbWorker()
         let interactor = CountriesInteractor()
         let presenter = CountriesPresenter()
         let router = CountriesRouter(sceneFactory: sceneFactory)
@@ -31,6 +32,7 @@ final class DefaultCountriesConfigurator: CountriesConfigurator {
         presenter.viewController = vc
         interactor.presenter = presenter
         interactor.worker = worker
+        interactor.dbWorker = dbWorker
         vc.output = interactor
         vc.router = router
         

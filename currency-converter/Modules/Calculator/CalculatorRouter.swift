@@ -14,7 +14,7 @@ protocol CalculatorRoutingLogic {
 }
 
 final class CalculatorRouter {
-    weak var source: UIViewController?
+    weak var source: CalculatorViewController?
     private var sceneFactory: SceneFactory
     
     init(sceneFactory: SceneFactory) {
@@ -26,12 +26,14 @@ extension CalculatorRouter: CalculatorRoutingLogic {
     func showCountryPicker() {
         sceneFactory.countriesConfigurator = DefaultCountriesConfigurator(sceneFactory: sceneFactory)
         let scene = sceneFactory.makeCountryListScene()
+        scene.parentOutput = source
         source?.navigationController?.present(scene, animated: true, completion: nil)
     }
     
     func showCurrencyRatePicker() {
         sceneFactory.pickerConfigurator = DefaultPickerConfigurator(sceneFactory: sceneFactory)
         let scene = sceneFactory.makeCurrencyRateListScene()
+        scene.parentOutput = source
         source?.navigationController?.present(scene, animated: true, completion: nil)
     }
         

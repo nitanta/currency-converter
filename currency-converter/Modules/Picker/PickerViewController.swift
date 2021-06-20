@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PickerViewControllerParentOutput: AnyObject {
+    func reloadRates()
+}
+
 protocol PickerViewControllerInput: AnyObject {
     func showRateList(list: [String: Double])
     func showLoader(show: Bool)
@@ -23,6 +27,7 @@ class PickerViewController: UIViewController {
 
     var rates: [(code: String, value: Double)] = []
     var output: PickerInteractorInput?
+    var parentOutput: PickerViewControllerParentOutput?
     var router: PickerRoutingLogic?
     
     @IBOutlet weak var tableView: UITableView!
@@ -74,6 +79,7 @@ extension PickerViewController: PickerViewControllerInput {
     }
     
     func goBack() {
+        parentOutput?.reloadRates()
         router?.goBack()
     }
     

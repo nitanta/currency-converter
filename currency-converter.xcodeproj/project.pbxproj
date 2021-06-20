@@ -47,6 +47,7 @@
 		50906AB1267CB0EA009B3CA9 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906AB0267CB0EA009B3CA9 /* AppError.swift */; };
 		50906AD0267CC5F6009B3CA9 /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906ACF267CC5F6009B3CA9 /* CoredataManager.swift */; };
 		50906ADE267CC6CB009B3CA9 /* AppEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906ADD267CC6CB009B3CA9 /* AppEndpoint.swift */; };
+		50C438EF267F4F9F008D5F49 /* PickerDbWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C438EE267F4F9F008D5F49 /* PickerDbWorker.swift */; };
 		50E06F4F267BA39B00EBC7B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E06F4E267BA39B00EBC7B3 /* AppDelegate.swift */; };
 		50E06F51267BA39B00EBC7B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E06F50267BA39B00EBC7B3 /* SceneDelegate.swift */; };
 		50E06F53267BA39B00EBC7B3 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E06F52267BA39B00EBC7B3 /* CalculatorViewController.swift */; };
@@ -117,6 +118,7 @@
 		50906AB0267CB0EA009B3CA9 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		50906ACF267CC5F6009B3CA9 /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
 		50906ADD267CC6CB009B3CA9 /* AppEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEndpoint.swift; sourceTree = "<group>"; };
+		50C438EE267F4F9F008D5F49 /* PickerDbWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDbWorker.swift; sourceTree = "<group>"; };
 		50E06F4B267BA39B00EBC7B3 /* currency-converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "currency-converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E06F4E267BA39B00EBC7B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50E06F50267BA39B00EBC7B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				50472670267CF83F00E5F84E /* PickerRouter.swift */,
 				50472675267CF84A00E5F84E /* PickerConfigurator.swift */,
 				5047267A267CF85200E5F84E /* PickerWorker.swift */,
+				50C438EE267F4F9F008D5F49 /* PickerDbWorker.swift */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				50906AD0267CC5F6009B3CA9 /* CoredataManager.swift in Sources */,
 				506D5282267DB60100C437BC /* CurrentCurrency.swift in Sources */,
 				50E06F91267BA95000EBC7B3 /* PickerViewController.swift in Sources */,
+				50C438EF267F4F9F008D5F49 /* PickerDbWorker.swift in Sources */,
 				5047266C267CF82B00E5F84E /* PickerPresenter.swift in Sources */,
 				5047263A267CED5900E5F84E /* Utilities.swift in Sources */,
 				50472655267CF7DD00E5F84E /* CountriesPresenter.swift in Sources */,
