@@ -48,6 +48,25 @@
 		50906AD0267CC5F6009B3CA9 /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906ACF267CC5F6009B3CA9 /* CoredataManager.swift */; };
 		50906ADE267CC6CB009B3CA9 /* AppEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906ADD267CC6CB009B3CA9 /* AppEndpoint.swift */; };
 		50C438EF267F4F9F008D5F49 /* PickerDbWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C438EE267F4F9F008D5F49 /* PickerDbWorker.swift */; };
+		50C438FB267F72AB008D5F49 /* CountriesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C438FA267F72AB008D5F49 /* CountriesViewControllerTests.swift */; };
+		50C43903267F72BA008D5F49 /* CountriesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43902267F72BA008D5F49 /* CountriesInteractorTests.swift */; };
+		50C43908267F72C8008D5F49 /* CountriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43907267F72C8008D5F49 /* CountriesPresenterTests.swift */; };
+		50C4390D267F72D5008D5F49 /* CountriesRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4390C267F72D5008D5F49 /* CountriesRouterTests.swift */; };
+		50C43915267F72F6008D5F49 /* CountriesWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43914267F72F6008D5F49 /* CountriesWorkerTests.swift */; };
+		50C4391A267F730A008D5F49 /* PickerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43919267F730A008D5F49 /* PickerViewControllerTests.swift */; };
+		50C4391F267F7315008D5F49 /* PickerInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4391E267F7315008D5F49 /* PickerInteractorTests.swift */; };
+		50C43924267F7322008D5F49 /* PickerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43923267F7322008D5F49 /* PickerPresenterTests.swift */; };
+		50C43929267F732C008D5F49 /* PickerRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43928267F732C008D5F49 /* PickerRouterTests.swift */; };
+		50C4392E267F733A008D5F49 /* PickerWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4392D267F733A008D5F49 /* PickerWorkerTests.swift */; };
+		50C43933267F7361008D5F49 /* CalculatorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43932267F7361008D5F49 /* CalculatorViewControllerTests.swift */; };
+		50C4393B267F736E008D5F49 /* CalculatorInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4393A267F736E008D5F49 /* CalculatorInteractorTests.swift */; };
+		50C43940267F737A008D5F49 /* CalculatorPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4393F267F737A008D5F49 /* CalculatorPresenterTests.swift */; };
+		50C43945267F7387008D5F49 /* CalculatorRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43944267F7387008D5F49 /* CalculatorRouterTests.swift */; };
+		50C4394A267F73AC008D5F49 /* CountriesConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43949267F73AC008D5F49 /* CountriesConfiguratorTests.swift */; };
+		50C4394F267F73B8008D5F49 /* PickerConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4394E267F73B8008D5F49 /* PickerConfiguratorTests.swift */; };
+		50C43957267F73CF008D5F49 /* CalculatorConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43956267F73CF008D5F49 /* CalculatorConfiguratorTests.swift */; };
+		50C4395D267F741A008D5F49 /* CountryManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4395C267F741A008D5F49 /* CountryManagerTests.swift */; };
+		50C43965267F7425008D5F49 /* RatesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43964267F7425008D5F49 /* RatesServiceTests.swift */; };
 		50E06F4F267BA39B00EBC7B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E06F4E267BA39B00EBC7B3 /* AppDelegate.swift */; };
 		50E06F51267BA39B00EBC7B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E06F50267BA39B00EBC7B3 /* SceneDelegate.swift */; };
 		50E06F53267BA39B00EBC7B3 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E06F52267BA39B00EBC7B3 /* CalculatorViewController.swift */; };
@@ -119,6 +138,25 @@
 		50906ACF267CC5F6009B3CA9 /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
 		50906ADD267CC6CB009B3CA9 /* AppEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEndpoint.swift; sourceTree = "<group>"; };
 		50C438EE267F4F9F008D5F49 /* PickerDbWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDbWorker.swift; sourceTree = "<group>"; };
+		50C438FA267F72AB008D5F49 /* CountriesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewControllerTests.swift; sourceTree = "<group>"; };
+		50C43902267F72BA008D5F49 /* CountriesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesInteractorTests.swift; sourceTree = "<group>"; };
+		50C43907267F72C8008D5F49 /* CountriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenterTests.swift; sourceTree = "<group>"; };
+		50C4390C267F72D5008D5F49 /* CountriesRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRouterTests.swift; sourceTree = "<group>"; };
+		50C43914267F72F6008D5F49 /* CountriesWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesWorkerTests.swift; sourceTree = "<group>"; };
+		50C43919267F730A008D5F49 /* PickerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewControllerTests.swift; sourceTree = "<group>"; };
+		50C4391E267F7315008D5F49 /* PickerInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerInteractorTests.swift; sourceTree = "<group>"; };
+		50C43923267F7322008D5F49 /* PickerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPresenterTests.swift; sourceTree = "<group>"; };
+		50C43928267F732C008D5F49 /* PickerRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRouterTests.swift; sourceTree = "<group>"; };
+		50C4392D267F733A008D5F49 /* PickerWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerWorkerTests.swift; sourceTree = "<group>"; };
+		50C43932267F7361008D5F49 /* CalculatorViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewControllerTests.swift; sourceTree = "<group>"; };
+		50C4393A267F736E008D5F49 /* CalculatorInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorInteractorTests.swift; sourceTree = "<group>"; };
+		50C4393F267F737A008D5F49 /* CalculatorPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenterTests.swift; sourceTree = "<group>"; };
+		50C43944267F7387008D5F49 /* CalculatorRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorRouterTests.swift; sourceTree = "<group>"; };
+		50C43949267F73AC008D5F49 /* CountriesConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesConfiguratorTests.swift; sourceTree = "<group>"; };
+		50C4394E267F73B8008D5F49 /* PickerConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerConfiguratorTests.swift; sourceTree = "<group>"; };
+		50C43956267F73CF008D5F49 /* CalculatorConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorConfiguratorTests.swift; sourceTree = "<group>"; };
+		50C4395C267F741A008D5F49 /* CountryManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerTests.swift; sourceTree = "<group>"; };
+		50C43964267F7425008D5F49 /* RatesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesServiceTests.swift; sourceTree = "<group>"; };
 		50E06F4B267BA39B00EBC7B3 /* currency-converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "currency-converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E06F4E267BA39B00EBC7B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50E06F50267BA39B00EBC7B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -263,6 +301,63 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		50C438F6267F7272008D5F49 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				50C438F9267F7291008D5F49 /* Countries */,
+				50C438F8267F728C008D5F49 /* Picker */,
+				50C438F7267F7286008D5F49 /* Calculator */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		50C438F7267F7286008D5F49 /* Calculator */ = {
+			isa = PBXGroup;
+			children = (
+				50C43932267F7361008D5F49 /* CalculatorViewControllerTests.swift */,
+				50C4393A267F736E008D5F49 /* CalculatorInteractorTests.swift */,
+				50C4393F267F737A008D5F49 /* CalculatorPresenterTests.swift */,
+				50C43944267F7387008D5F49 /* CalculatorRouterTests.swift */,
+				50C43956267F73CF008D5F49 /* CalculatorConfiguratorTests.swift */,
+			);
+			path = Calculator;
+			sourceTree = "<group>";
+		};
+		50C438F8267F728C008D5F49 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				50C43919267F730A008D5F49 /* PickerViewControllerTests.swift */,
+				50C4391E267F7315008D5F49 /* PickerInteractorTests.swift */,
+				50C43923267F7322008D5F49 /* PickerPresenterTests.swift */,
+				50C43928267F732C008D5F49 /* PickerRouterTests.swift */,
+				50C4392D267F733A008D5F49 /* PickerWorkerTests.swift */,
+				50C4394E267F73B8008D5F49 /* PickerConfiguratorTests.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		50C438F9267F7291008D5F49 /* Countries */ = {
+			isa = PBXGroup;
+			children = (
+				50C438FA267F72AB008D5F49 /* CountriesViewControllerTests.swift */,
+				50C43902267F72BA008D5F49 /* CountriesInteractorTests.swift */,
+				50C43907267F72C8008D5F49 /* CountriesPresenterTests.swift */,
+				50C4390C267F72D5008D5F49 /* CountriesRouterTests.swift */,
+				50C43914267F72F6008D5F49 /* CountriesWorkerTests.swift */,
+				50C43949267F73AC008D5F49 /* CountriesConfiguratorTests.swift */,
+			);
+			path = Countries;
+			sourceTree = "<group>";
+		};
+		50C4395B267F740E008D5F49 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				50C4395C267F741A008D5F49 /* CountryManagerTests.swift */,
+				50C43964267F7425008D5F49 /* RatesServiceTests.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		50E06F42267BA39B00EBC7B3 = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +398,8 @@
 		50E06F67267BA39E00EBC7B3 /* currency-converterTests */ = {
 			isa = PBXGroup;
 			children = (
+				50C4395B267F740E008D5F49 /* Manager */,
+				50C438F6267F7272008D5F49 /* Modules */,
 				50E06F68267BA39E00EBC7B3 /* currency_converterTests.swift */,
 				50E06F6A267BA39E00EBC7B3 /* Info.plist */,
 			);
@@ -592,7 +689,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C43957267F73CF008D5F49 /* CalculatorConfiguratorTests.swift in Sources */,
+				50C4394F267F73B8008D5F49 /* PickerConfiguratorTests.swift in Sources */,
 				50E06F69267BA39E00EBC7B3 /* currency_converterTests.swift in Sources */,
+				50C43924267F7322008D5F49 /* PickerPresenterTests.swift in Sources */,
+				50C4390D267F72D5008D5F49 /* CountriesRouterTests.swift in Sources */,
+				50C4391F267F7315008D5F49 /* PickerInteractorTests.swift in Sources */,
+				50C43940267F737A008D5F49 /* CalculatorPresenterTests.swift in Sources */,
+				50C43945267F7387008D5F49 /* CalculatorRouterTests.swift in Sources */,
+				50C43915267F72F6008D5F49 /* CountriesWorkerTests.swift in Sources */,
+				50C4393B267F736E008D5F49 /* CalculatorInteractorTests.swift in Sources */,
+				50C43903267F72BA008D5F49 /* CountriesInteractorTests.swift in Sources */,
+				50C43933267F7361008D5F49 /* CalculatorViewControllerTests.swift in Sources */,
+				50C4394A267F73AC008D5F49 /* CountriesConfiguratorTests.swift in Sources */,
+				50C43965267F7425008D5F49 /* RatesServiceTests.swift in Sources */,
+				50C4391A267F730A008D5F49 /* PickerViewControllerTests.swift in Sources */,
+				50C4395D267F741A008D5F49 /* CountryManagerTests.swift in Sources */,
+				50C438FB267F72AB008D5F49 /* CountriesViewControllerTests.swift in Sources */,
+				50C4392E267F733A008D5F49 /* PickerWorkerTests.swift in Sources */,
+				50C43929267F732C008D5F49 /* PickerRouterTests.swift in Sources */,
+				50C43908267F72C8008D5F49 /* CountriesPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
