@@ -44,7 +44,8 @@ extension AppDelegate {
         rateWorkder.fetchRates(forCountryCode: rateDbWorkder.getCurrentCountryCode()) { result in
             switch result {
             case .success(let rates):
-                if let rateCode = rateDbWorkder.getCurrentCurrencyCode(), let updatedRate = rates[rateCode]  {
+                let countryCode = rateDbWorkder.getCurrentCountryCode()
+                if let rateCode = rateDbWorkder.getCurrentCurrencyCode(), let updatedRate = rates[countryCode + rateCode]  {
                     rateDbWorkder.updateCurrentCurrencyRate(rate: updatedRate)
                 }
             default: break
@@ -57,7 +58,7 @@ extension AppDelegate {
     
     func scheduleBackgroundRateFetch() {
         let rateFetchTask = BGAppRefreshTaskRequest(identifier: "com.lotuslabs.ratefetch")
-        rateFetchTask.earliestBeginDate = Date(timeIntervalSinceNow: 30)
+        rateFetchTask.earliestBeginDate = Date(timeIntervalSinceNow: 30 * 60) //30 minutes background refresh
         
         do {
           try BGTaskScheduler.shared.submit(rateFetchTask)
