@@ -19,13 +19,18 @@ protocol CalculatorViewControllerOutput: AnyObject {
     func loadCurrentCountry()
     func loadCurrentRate()
     func loadRates()
-    func convertCurrency()
+    func convertCurrency(value: Int)
 }
 
 class CalculatorViewController: UIViewController {
 
     var output: CalculatorInteractorInput?
     var router: CalculatorRoutingLogic?
+    
+    var typedInteger: Int {
+        guard let value = convertedValueLbl.text, let intValue = Int(value) else { return 0 }
+        return intValue
+    }
     
     @IBOutlet weak var selectedCodeBtn: UIButton!
     @IBOutlet weak var convertedValueLbl: UILabel!
@@ -35,6 +40,14 @@ class CalculatorViewController: UIViewController {
     
     @IBOutlet var numberBtns: [UIButton]!
     @IBAction func numberBtnTapped(_ sender: Any) {
+        guard let button = sender as? UIButton else { return }
+        switch button.tag {
+        case 0...9: addDigitTapped(button: button)
+        case 20: equalsTapped()
+        case 30: deleteTapped()
+        case 40: resetTapped()
+        default: break
+        }
     }
     
     override func viewDidLoad() {
@@ -44,21 +57,43 @@ class CalculatorViewController: UIViewController {
     }
     
     private func setupViews() {
-        
+        selectedCodeBtn.isHidden = true
     }
     
     private func setupData() {
         output?.loadCurrentCountry()
+        output?.loadCurrentRate()
         output?.loadRates()
     }
     
     @objc func barButtonTapped() {
         router?.showCountryPicker()
     }
+    
+    private func resetTapped() {
+        guard typedInteger != 0 else { return }
+        convertedValueLbl.text = "0"
+    }
+    
+    private func deleteTapped() {
+        guard typedInteger != 0, let typedText = convertedValueLbl.text else { return }
+        convertedValueLbl.text = typedText.count > 1 ? String(typedText.dropLast()) : "0"
+    }
+    
+    private func equalsTapped() {
+        guard typedInteger != 0 else { return }
+        output?.convertCurrency(value: typedInteger)
+    }
+    
+    private func addDigitTapped(button: UIButton) {
+        guard let typedText = convertedValueLbl.text else { return }
+        convertedValueLbl.text = typedText == "0" ? "\(button.tag)" : "\(typedText)\(button.tag)"
+    }
 }
 
 extension CalculatorViewController: CalculatorViewControllerInput {
     func showDefaultCurrencyRate(code: String, source: String, rate: Double) {
+        selectedCodeBtn.isHidden = false
         selectedCodeBtn.setTitle("\(rate) = \(code)", for: .normal)
     }
     

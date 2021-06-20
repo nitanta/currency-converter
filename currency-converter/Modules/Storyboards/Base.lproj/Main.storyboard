@@ -290,7 +290,7 @@
                                         <rect key="frame" x="0.0" y="416" width="374" height="84"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="30"/>
-                                        <state key="normal" title="CONVERT">
+                                        <state key="normal" title="RESET">
                                             <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -298,7 +298,7 @@
                                                 <real key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="buttonTag">
-                                                <integer key="value" value="30"/>
+                                                <integer key="value" value="40"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>

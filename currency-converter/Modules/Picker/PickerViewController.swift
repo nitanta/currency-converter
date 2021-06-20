@@ -61,8 +61,8 @@ extension PickerViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let item = ra[indexPath.row]
-        output?.selectRate(code: "", rate: 0.0)
+        let item = rates[indexPath.row]
+        output?.selectRate(code: item.code, rate: item.value)
     }
     
 }

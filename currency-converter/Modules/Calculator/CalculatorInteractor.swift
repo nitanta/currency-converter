@@ -25,9 +25,11 @@ final class CalculatorInteractor {
 }
 
 extension CalculatorInteractor: CalculatorInteractorInput {
-    
-    func convertCurrency() {
-        presenter?.showConvertedData(value: "100")
+    func convertCurrency(value: Int) {
+        if let currentRate = CurrentCurrency.findCurrencySaved() {
+            let convertedValue = Double(value) * currentRate.rate
+            self.presenter?.showConvertedData(value: String(format: "%.0f", convertedValue))
+        }
     }
     
     func loadRates() {
@@ -73,6 +75,5 @@ extension CalculatorInteractor: CalculatorInteractorInput {
         }
         return country.code
     }
-    
     
 }
