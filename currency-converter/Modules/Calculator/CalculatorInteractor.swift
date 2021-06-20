@@ -24,12 +24,12 @@ final class CalculatorInteractor {
 }
 
 extension CalculatorInteractor: CalculatorInteractorInput {
-    func convertCurrency(value: Int) {
+    func convertCurrency(value: Double) {
         guard let dbWorker = dbWorker else { return }
         
         if let currentRate = dbWorker.loadSavedRate() {
-            let convertedValue = Double(value) * currentRate.rate
-            self.presenter?.showConvertedData(value: String(format: "%.0f", convertedValue))
+            let convertedValue = value * currentRate.rate
+            self.presenter?.showConvertedData(value: String(format: "%.2f", convertedValue))
         } else {
             self.presenter?.showFailure(message: "Conversion rates not found.")
         }
@@ -47,7 +47,7 @@ extension CalculatorInteractor: CalculatorInteractorInput {
             case .success:
                 if reload {
                     self.saveNewRate()
-                } else if dbWorker.hasCurrentRateSaved() {
+                } else if !dbWorker.hasCurrentRateSaved() {
                     self.loadCurrentRate()
                 }
             case .failure(let error):

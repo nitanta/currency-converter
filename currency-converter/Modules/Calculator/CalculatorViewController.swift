@@ -19,7 +19,7 @@ protocol CalculatorViewControllerOutput: AnyObject {
     func loadCurrentCountry()
     func loadCurrentRate()
     func loadRates(reload: Bool)
-    func convertCurrency(value: Int)
+    func convertCurrency(value: Double)
 }
 
 class CalculatorViewController: UIViewController {
@@ -27,8 +27,8 @@ class CalculatorViewController: UIViewController {
     var output: CalculatorInteractorInput?
     var router: CalculatorRoutingLogic?
     
-    var typedInteger: Int {
-        guard let value = convertedValueLbl.text, let intValue = Int(value) else { return 0 }
+    var typedInteger: Double {
+        guard let value = convertedValueLbl.text, let intValue = Double(value) else { return 0 }
         return intValue
     }
     
