@@ -15,10 +15,11 @@ struct Utilities {
         return decoder
     }()
     
-    static func loadStub<D: Decodable>(url: URL) -> D? {
+    
+    static func loadStub<T>(_ type: T.Type, from url: URL) throws -> T? where T : Decodable {
         let data = try! Data(contentsOf: url)
         do {
-            let d = try jsonDecoder.decode(D.self, from: data)
+            let d = try jsonDecoder.decode(T.self, from: data)
             return d
         } catch {
             print(error.localizedDescription)

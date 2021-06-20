@@ -30,13 +30,13 @@ struct ErrorMessage: Codable {
 extension RatesResponse {
     static var stubSuccessModel: RatesResponse? {
         let url = Bundle.main.url(forResource: "RateResponseSuccess", withExtension: "json")!
-        let response: RatesResponse? = Utilities.loadStub(url: url)
+        let response: RatesResponse? = try? Utilities.loadStub(RatesResponse.self, from: url)
         return response
         
     }
     static var stubFailureModel: RatesResponse? {
         let url = Bundle.main.url(forResource: "RateResponseFail", withExtension: "json")!
-        let response: RatesResponse? = Utilities.loadStub(url: url)
+        let response: RatesResponse? = try? Utilities.loadStub(RatesResponse.self, from: url)
         return response
     }
 }

@@ -12,3 +12,11 @@ struct CountryResponse: Codable {
     let title: String
     let dialCode: String?
 }
+
+extension CountryResponse {
+    static var stubCountriesModel: [CountryResponse] {
+        let url = Bundle.main.url(forResource: "Countries", withExtension: "json")!
+        let response: [CountryResponse]? = try? Utilities.loadStub([CountryResponse].self, from: url)
+        return response ?? []
+    }
+}
