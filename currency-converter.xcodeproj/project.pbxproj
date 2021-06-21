@@ -37,6 +37,7 @@
 		506D5297267E0E1400C437BC /* RateResponseSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 50472629267CECE900E5F84E /* RateResponseSuccess.json */; };
 		506D529F267E0E1800C437BC /* RateResponseFail.json in Resources */ = {isa = PBXBuildFile; fileRef = 50472631267CECFF00E5F84E /* RateResponseFail.json */; };
 		506D52B0267E0EAF00C437BC /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 50906A23267CA543009B3CA9 /* Countries.json */; };
+		507DC45E26810D59005FC17D /* PickerDbWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507DC45D26810D59005FC17D /* PickerDbWorkerTests.swift */; };
 		50906A24267CA543009B3CA9 /* Countries.json in Sources */ = {isa = PBXBuildFile; fileRef = 50906A23267CA543009B3CA9 /* Countries.json */; };
 		50906A31267CA5B5009B3CA9 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A30267CA5B5009B3CA9 /* CountriesViewController.swift */; };
 		50906A3A267CA5D6009B3CA9 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A38267CA5D6009B3CA9 /* CountryTableViewCell.swift */; };
@@ -62,11 +63,7 @@
 		50C4393B267F736E008D5F49 /* CalculatorInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4393A267F736E008D5F49 /* CalculatorInteractorTests.swift */; };
 		50C43940267F737A008D5F49 /* CalculatorPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4393F267F737A008D5F49 /* CalculatorPresenterTests.swift */; };
 		50C43945267F7387008D5F49 /* CalculatorRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43944267F7387008D5F49 /* CalculatorRouterTests.swift */; };
-		50C4394A267F73AC008D5F49 /* CountriesConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43949267F73AC008D5F49 /* CountriesConfiguratorTests.swift */; };
-		50C4394F267F73B8008D5F49 /* PickerConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4394E267F73B8008D5F49 /* PickerConfiguratorTests.swift */; };
-		50C43957267F73CF008D5F49 /* CalculatorConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43956267F73CF008D5F49 /* CalculatorConfiguratorTests.swift */; };
 		50C4395D267F741A008D5F49 /* CountryManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4395C267F741A008D5F49 /* CountryManagerTests.swift */; };
-		50C43965267F7425008D5F49 /* RatesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43964267F7425008D5F49 /* RatesServiceTests.swift */; };
 		50C4396E267FB2FB008D5F49 /* RateResponseSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 50472629267CECE900E5F84E /* RateResponseSuccess.json */; };
 		50C43972267FB302008D5F49 /* RateResponseFail.json in Resources */ = {isa = PBXBuildFile; fileRef = 50472631267CECFF00E5F84E /* RateResponseFail.json */; };
 		50E06F4F267BA39B00EBC7B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E06F4E267BA39B00EBC7B3 /* AppDelegate.swift */; };
@@ -129,6 +126,7 @@
 		504726AA267D181E00E5F84E /* DatabaseManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManageable.swift; sourceTree = "<group>"; };
 		506D527C267DB5F500C437BC /* CurrentCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCountry.swift; sourceTree = "<group>"; };
 		506D5281267DB60100C437BC /* CurrentCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCurrency.swift; sourceTree = "<group>"; };
+		507DC45D26810D59005FC17D /* PickerDbWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDbWorkerTests.swift; sourceTree = "<group>"; };
 		50906A23267CA543009B3CA9 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
 		50906A30267CA5B5009B3CA9 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		50906A38267CA5D6009B3CA9 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -154,11 +152,7 @@
 		50C4393A267F736E008D5F49 /* CalculatorInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorInteractorTests.swift; sourceTree = "<group>"; };
 		50C4393F267F737A008D5F49 /* CalculatorPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenterTests.swift; sourceTree = "<group>"; };
 		50C43944267F7387008D5F49 /* CalculatorRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorRouterTests.swift; sourceTree = "<group>"; };
-		50C43949267F73AC008D5F49 /* CountriesConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesConfiguratorTests.swift; sourceTree = "<group>"; };
-		50C4394E267F73B8008D5F49 /* PickerConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerConfiguratorTests.swift; sourceTree = "<group>"; };
-		50C43956267F73CF008D5F49 /* CalculatorConfiguratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorConfiguratorTests.swift; sourceTree = "<group>"; };
 		50C4395C267F741A008D5F49 /* CountryManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerTests.swift; sourceTree = "<group>"; };
-		50C43964267F7425008D5F49 /* RatesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesServiceTests.swift; sourceTree = "<group>"; };
 		50E06F4B267BA39B00EBC7B3 /* currency-converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "currency-converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50E06F4E267BA39B00EBC7B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50E06F50267BA39B00EBC7B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -320,7 +314,6 @@
 				50C4393A267F736E008D5F49 /* CalculatorInteractorTests.swift */,
 				50C4393F267F737A008D5F49 /* CalculatorPresenterTests.swift */,
 				50C43944267F7387008D5F49 /* CalculatorRouterTests.swift */,
-				50C43956267F73CF008D5F49 /* CalculatorConfiguratorTests.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -333,7 +326,7 @@
 				50C43923267F7322008D5F49 /* PickerPresenterTests.swift */,
 				50C43928267F732C008D5F49 /* PickerRouterTests.swift */,
 				50C4392D267F733A008D5F49 /* PickerWorkerTests.swift */,
-				50C4394E267F73B8008D5F49 /* PickerConfiguratorTests.swift */,
+				507DC45D26810D59005FC17D /* PickerDbWorkerTests.swift */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -346,7 +339,6 @@
 				50C43907267F72C8008D5F49 /* CountriesPresenterTests.swift */,
 				50C4390C267F72D5008D5F49 /* CountriesRouterTests.swift */,
 				50C43914267F72F6008D5F49 /* CountriesWorkerTests.swift */,
-				50C43949267F73AC008D5F49 /* CountriesConfiguratorTests.swift */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -355,7 +347,6 @@
 			isa = PBXGroup;
 			children = (
 				50C4395C267F741A008D5F49 /* CountryManagerTests.swift */,
-				50C43964267F7425008D5F49 /* RatesServiceTests.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -693,8 +684,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C43957267F73CF008D5F49 /* CalculatorConfiguratorTests.swift in Sources */,
-				50C4394F267F73B8008D5F49 /* PickerConfiguratorTests.swift in Sources */,
 				50E06F69267BA39E00EBC7B3 /* currency_converterTests.swift in Sources */,
 				50C43924267F7322008D5F49 /* PickerPresenterTests.swift in Sources */,
 				50C4390D267F72D5008D5F49 /* CountriesRouterTests.swift in Sources */,
@@ -705,12 +694,11 @@
 				50C4393B267F736E008D5F49 /* CalculatorInteractorTests.swift in Sources */,
 				50C43903267F72BA008D5F49 /* CountriesInteractorTests.swift in Sources */,
 				50C43933267F7361008D5F49 /* CalculatorViewControllerTests.swift in Sources */,
-				50C4394A267F73AC008D5F49 /* CountriesConfiguratorTests.swift in Sources */,
-				50C43965267F7425008D5F49 /* RatesServiceTests.swift in Sources */,
 				50C4391A267F730A008D5F49 /* PickerViewControllerTests.swift in Sources */,
 				50C4395D267F741A008D5F49 /* CountryManagerTests.swift in Sources */,
 				50C438FB267F72AB008D5F49 /* CountriesViewControllerTests.swift in Sources */,
 				50C4392E267F733A008D5F49 /* PickerWorkerTests.swift in Sources */,
+				507DC45E26810D59005FC17D /* PickerDbWorkerTests.swift in Sources */,
 				50C43929267F732C008D5F49 /* PickerRouterTests.swift in Sources */,
 				50C43908267F72C8008D5F49 /* CountriesPresenterTests.swift in Sources */,
 			);

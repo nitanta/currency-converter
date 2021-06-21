@@ -18,8 +18,8 @@ protocol CountriesInteractorOutput: AnyObject {
 
 final class CountriesInteractor {
     var presenter: CountriesPresenterInput?
-    var worker: CountriesWorker?
-    var dbWorker: PickerDbWorker?
+    var worker: CountriesWorkerLogic?
+    var dbWorker: PickerDbWorkerLogic?
 }
 
 extension CountriesInteractor: CountriesInteractorInput {

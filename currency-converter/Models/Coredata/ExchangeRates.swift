@@ -8,8 +8,21 @@
 import Foundation
 import CoreData
 
+protocol ExchangeRataDefinable {
+    var id: String { get set }
+    var code: String { get set }
+    var timestamp: Date { get set }
+    var rates: [String: Double] { get set }
+}
 
-class ExchangeRates: NSManagedObject, DatabaseManageable {
+struct ExchangeRateMock: ExchangeRataDefinable {
+    var id: String
+    var code: String
+    var timestamp: Date
+    var rates: [String : Double]
+}
+
+class ExchangeRates: NSManagedObject, DatabaseManageable, ExchangeRataDefinable {
     
     @nonobjc class func fetchRequest() -> NSFetchRequest<ExchangeRates> {
         return NSFetchRequest<ExchangeRates>(entityName: "ExchangeRates")

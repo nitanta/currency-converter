@@ -19,13 +19,14 @@ final class CalculatorViewControllerTests: XCTestCase {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: "CalculatorViewController") as? CalculatorViewController
-        sut.loadViewIfNeeded()
         
         interactor = CalculatorInteractorSpy()
         router = CalculatorRouterSpy()
         
         sut.output = interactor
         sut.router = router
+        
+        sut.loadViewIfNeeded()
     }
     
     override func tearDown() {
@@ -35,7 +36,40 @@ final class CalculatorViewControllerTests: XCTestCase {
         super.tearDown()
     }
     
+    func test_calculatorScene_viewLoaded_loadCountryCalled() {
+        XCTAssertTrue(interactor.loadCurrentRateCalled)
+    }
     
+    func test_calculatorScene_viewLoaded_loadRatesCalled() {
+        XCTAssertTrue(interactor.loadRatesCalled)
+    }
+    
+    func test_calculatorScene_viewLoaded_loadCurrentRateCalled() {
+        XCTAssertTrue(interactor.loadCurrentRateCalled)
+    }
+    
+    func test_calculatorScene_viewLoaded_convertCurrencyCalled() {
+        sut.convertedValueLbl.text = "1.0"
+        let button = UIButton()
+        button.tag = 20
+        sut.numberBtnTapped(button)
+        XCTAssertTrue(interactor.convertCurrencyCalled)
+    }
+    
+    func test_calculatorScence_navBarTap_countryPickerCalled() {
+        sut.barButtonTapped()
+        XCTAssertTrue(router.showCountryPickerCalled)
+    }
+    
+    func test_calculatorScence_ratePickerTap_countryPickerCalled() {
+        sut.selectedBodeBtnTap(UIButton())
+        XCTAssertTrue(router.showCurrencyRatePickerCalled)
+    }
+    
+    func test_calculatorScence_failureError_failureMessageShowCalled() {
+        sut.showError(message: "")
+        XCTAssertTrue(router.failureMessageShowCalled)
+    }
 }
 
 private final class CalculatorInteractorSpy: CalculatorInteractorInput {

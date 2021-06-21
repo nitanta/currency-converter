@@ -7,7 +7,11 @@
 
 import Foundation
 
-class CountriesWorker {
+protocol CountriesWorkerLogic {
+    func fetchCountries(completion: @escaping (Result<[CountryResponse], Error>) -> Void)
+}
+
+class CountriesWorker: CountriesWorkerLogic {
     let countryManager: CountryManager
     init(manager: CountryManager) {
         self.countryManager = manager

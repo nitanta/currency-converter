@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CountryResponse: Codable {
+struct CountryResponse: Codable, Equatable {
     let code, emoji, unicode, name: String
     let title: String
     let dialCode: String?

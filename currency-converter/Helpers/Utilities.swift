@@ -34,7 +34,7 @@ struct Utilities {
     
     static var getFilePath: String {
         let urls = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
-        return "FILE PATH: \(urls.last)"
+        return "FILE PATH: \(String(describing: urls.last))"
     }
     
     static func navigationBarCustomize() {

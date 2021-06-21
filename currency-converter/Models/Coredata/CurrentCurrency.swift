@@ -8,8 +8,21 @@
 import Foundation
 import CoreData
 
+protocol CurrentCurrencyDefinable {
+    var id: String { get set }
+    var code: String { get set }
+    var source: String { get set }
+    var rate: Double { get set }
+}
 
-class CurrentCurrency: NSManagedObject, DatabaseManageable {
+struct CurrentCurrencyMock: CurrentCurrencyDefinable {
+    var id: String
+    var code: String
+    var source: String
+    var rate: Double
+}
+
+class CurrentCurrency: NSManagedObject, DatabaseManageable, CurrentCurrencyDefinable {
     
     @nonobjc class func fetchRequest() -> NSFetchRequest<CurrentCurrency> {
         return NSFetchRequest<CurrentCurrency>(entityName: "CurrentCurrency")

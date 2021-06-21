@@ -18,8 +18,8 @@ protocol PickerInteractorOutput: AnyObject {
 
 final class PickerInteractor {
     var presenter: PickerPresenterInput?
-    var worker: PickerWorker?
-    var dbWorker: PickerDbWorker?
+    var worker: PickerWorkerLogic?
+    var dbWorker: PickerDbWorkerLogic?
 }
 
 extension PickerInteractor: PickerInteractorInput {
@@ -28,6 +28,7 @@ extension PickerInteractor: PickerInteractorInput {
         showSavedRates()
         
         guard let dbWorker = dbWorker else { return }
+        
         presenter?.showLoader(show: true)
         
         let countryCode = dbWorker.getCurrentCountryCode()

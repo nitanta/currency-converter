@@ -8,8 +8,17 @@
 import Foundation
 import CoreData
 
+protocol CurrentCountryDefinable {
+    var id: String { get set }
+    var code: String { get set }
+}
 
-class CurrentCountry: NSManagedObject, DatabaseManageable {
+struct CurrentCountryMock: CurrentCountryDefinable {
+    var id: String
+    var code: String    
+}
+
+class CurrentCountry: NSManagedObject, DatabaseManageable, CurrentCountryDefinable {
     
     @nonobjc class func fetchRequest() -> NSFetchRequest<CurrentCountry> {
         return NSFetchRequest<CurrentCountry>(entityName: "CurrentCountry")

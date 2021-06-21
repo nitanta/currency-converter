@@ -8,7 +8,11 @@
 import Foundation
 import Combine
 
-class PickerWorker {
+protocol PickerWorkerLogic {
+    func fetchRates(forCountryCode: String, completion: @escaping (Result<[String: Double], Error>) -> Void)
+}
+
+class PickerWorker: PickerWorkerLogic {
     
     private var bag = Set<AnyCancellable>()
 

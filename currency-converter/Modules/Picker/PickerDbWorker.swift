@@ -7,12 +7,25 @@
 
 import Foundation
 
-class PickerDbWorker {
+protocol PickerDbWorkerLogic {
+    func getSavedRates() -> ExchangeRataDefinable?
+    func getCurrentCountryCode() -> String
+    func saveCurrentRate(code: String, rate: Double)
+    func saveCountry(code: String)
+    func loadSavedCountry() -> CurrentCountryDefinable
+    func loadSavedRate() -> (code: String, source: String, rate: Double)?
+    func saveNewRate() -> (code: String, source: String, rate: Double)?
+    func hasCurrentRateSaved() -> Bool
+    func getCurrentCurrencyCode() -> String?
+    func updateCurrentCurrencyRate(rate: Double)
+}
+
+class PickerDbWorker: PickerDbWorkerLogic {
     
     let database = CoreDataManager.shared
     init() {}
     
-    func getSavedRates() -> ExchangeRates? {
+    func getSavedRates() -> ExchangeRataDefinable? {
         let currentCode = getCurrentCountryCode()
         let rates = ExchangeRates.getRates(code: currentCode)
         return rates
@@ -36,7 +49,7 @@ class PickerDbWorker {
         database.saveContext()
     }
     
-    func loadSavedCountry() -> CurrentCountry {
+    func loadSavedCountry() -> CurrentCountryDefinable {
         if CurrentCountry.hasCountrySaved(), let country = CurrentCountry.findCountrySaved() {
             return country
         } else {
