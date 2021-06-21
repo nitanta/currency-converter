@@ -11,9 +11,9 @@ protocol SceneFactory {
     var countriesConfigurator: CountriesConfigurator! { get set }
     var pickerConfigurator: PickerConfigurator! { get set }
     var calculatorConfigurator: CalculatorConfigurator! { get set }
-    func makeCountryListScene() -> CountriesViewController
-    func makeCurrencyRateListScene() -> PickerViewController
-    func makeCalculatorScene() -> CalculatorViewController
+    func makeCountryListScene() -> UIViewController
+    func makeCurrencyRateListScene() -> UIViewController
+    func makeCalculatorScene() -> UIViewController
 }
 
 final class DefaultSceneFactory: SceneFactory {
@@ -22,7 +22,7 @@ final class DefaultSceneFactory: SceneFactory {
     var pickerConfigurator: PickerConfigurator!
     var calculatorConfigurator: CalculatorConfigurator!
     
-    func makeCountryListScene() -> CountriesViewController {
+    func makeCountryListScene() -> UIViewController {
         let board = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         guard let viewController = board.instantiateViewController(identifier: "CountriesViewController") as? CountriesViewController else {
             fatalError()
@@ -30,7 +30,7 @@ final class DefaultSceneFactory: SceneFactory {
         return countriesConfigurator.configured(viewController)
     }
     
-    func makeCurrencyRateListScene() -> PickerViewController {
+    func makeCurrencyRateListScene() -> UIViewController {
         let board = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         guard let viewController = board.instantiateViewController(identifier: "PickerViewController") as? PickerViewController else {
             fatalError()
@@ -38,7 +38,7 @@ final class DefaultSceneFactory: SceneFactory {
         return pickerConfigurator.configured(viewController)
     }
     
-    func makeCalculatorScene() -> CalculatorViewController {
+    func makeCalculatorScene() -> UIViewController {
         let board = UIStoryboard.init(name: "Main", bundle: Bundle.main)
         guard let viewController = board.instantiateViewController(identifier: "CalculatorViewController") as? CalculatorViewController else {
             fatalError()

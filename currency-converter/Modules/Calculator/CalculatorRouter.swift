@@ -25,14 +25,14 @@ final class CalculatorRouter {
 extension CalculatorRouter: CalculatorRoutingLogic {
     func showCountryPicker() {
         sceneFactory.countriesConfigurator = DefaultCountriesConfigurator(sceneFactory: sceneFactory)
-        let scene = sceneFactory.makeCountryListScene()
+        guard let scene = sceneFactory.makeCountryListScene() as? CountriesViewController else { return }
         scene.parentOutput = source
         source?.navigationController?.present(scene, animated: true, completion: nil)
     }
     
     func showCurrencyRatePicker() {
         sceneFactory.pickerConfigurator = DefaultPickerConfigurator(sceneFactory: sceneFactory)
-        let scene = sceneFactory.makeCurrencyRateListScene()
+        guard let scene = sceneFactory.makeCurrencyRateListScene() as? PickerViewController else { return }
         scene.parentOutput = source
         source?.navigationController?.present(scene, animated: true, completion: nil)
     }
