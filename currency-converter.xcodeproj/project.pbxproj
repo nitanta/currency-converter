@@ -49,6 +49,7 @@
 		5099682A2681A29300EF4DAD /* CountriesWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509968292681A29300EF4DAD /* CountriesWorkerTests.swift */; };
 		5099682F2681A3AD00EF4DAD /* PickerWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5099682E2681A3AD00EF4DAD /* PickerWorkerTests.swift */; };
 		509968372681A58B00EF4DAD /* PickerDbWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509968362681A58B00EF4DAD /* PickerDbWorkerTests.swift */; };
+		5099683C2681A67900EF4DAD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5099683B2681A67900EF4DAD /* README.md */; };
 		50C438EF267F4F9F008D5F49 /* PickerDbWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C438EE267F4F9F008D5F49 /* PickerDbWorker.swift */; };
 		50C438FB267F72AB008D5F49 /* CountriesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C438FA267F72AB008D5F49 /* CountriesViewControllerTests.swift */; };
 		50C43903267F72BA008D5F49 /* CountriesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43902267F72BA008D5F49 /* CountriesInteractorTests.swift */; };
@@ -137,6 +138,7 @@
 		509968292681A29300EF4DAD /* CountriesWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesWorkerTests.swift; sourceTree = "<group>"; };
 		5099682E2681A3AD00EF4DAD /* PickerWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerWorkerTests.swift; sourceTree = "<group>"; };
 		509968362681A58B00EF4DAD /* PickerDbWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDbWorkerTests.swift; sourceTree = "<group>"; };
+		5099683B2681A67900EF4DAD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		50C438EE267F4F9F008D5F49 /* PickerDbWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDbWorker.swift; sourceTree = "<group>"; };
 		50C438FA267F72AB008D5F49 /* CountriesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewControllerTests.swift; sourceTree = "<group>"; };
 		50C43902267F72BA008D5F49 /* CountriesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesInteractorTests.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 		50E06F42267BA39B00EBC7B3 = {
 			isa = PBXGroup;
 			children = (
+				5099683B2681A67900EF4DAD /* README.md */,
 				50E06F4D267BA39B00EBC7B3 /* currency-converter */,
 				50E06F67267BA39E00EBC7B3 /* currency-converterTests */,
 				50E06F72267BA39E00EBC7B3 /* currency-converterUITests */,
@@ -612,6 +615,7 @@
 			files = (
 				506D529F267E0E1800C437BC /* RateResponseFail.json in Resources */,
 				506D5297267E0E1400C437BC /* RateResponseSuccess.json in Resources */,
+				5099683C2681A67900EF4DAD /* README.md in Resources */,
 				506D528F267E0E0E00C437BC /* Countries.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
