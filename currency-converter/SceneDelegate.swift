@@ -37,7 +37,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
+        //Save database objects when app enters background
         CoreDataManager.shared.saveContext()
+        //Schedule background fetch operation
         (UIApplication.shared.delegate as! AppDelegate).scheduleBackgroundRateFetch()
     }
 

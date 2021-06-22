@@ -14,6 +14,7 @@ struct CountryResponse: Codable, Equatable {
 }
 
 extension CountryResponse {
+    /// Load stub data
     static var stubCountriesModel: [CountryResponse] {
         let url = Bundle.main.url(forResource: "Countries", withExtension: "json")!
         let response: [CountryResponse]? = try? Utilities.loadStub([CountryResponse].self, from: url)

@@ -37,6 +37,7 @@ class PickerViewController: UIViewController {
         output?.loadRates()
     }
     
+    /// Setup table views for the application
     private func setupTableViews() {
         tableView.register(UINib(nibName: PickerTableViewCell.identifer, bundle: Bundle.main), forCellReuseIdentifier: PickerTableViewCell.identifer)
         tableView.separatorStyle = .singleLine
@@ -46,6 +47,8 @@ class PickerViewController: UIViewController {
 
 }
 
+
+// MARK: - Tableview delegate and datasource
 extension PickerViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -72,6 +75,7 @@ extension PickerViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
+// MARK: - Picker view controller input
 extension PickerViewController: PickerViewControllerInput {
     func showRateList(list: [String : Double]) {
         rates = list.map { (code: $0.key, value: $0.value) }

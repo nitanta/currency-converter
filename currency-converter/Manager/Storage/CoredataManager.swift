@@ -39,6 +39,7 @@ class CoreDataManager {
         }
     }
     
+    /// Clear databases
     func deleteData() {
         let manager = CoreDataManager.shared
         manager.clearEntities(entities: [
@@ -48,6 +49,8 @@ class CoreDataManager {
         ])
     }    
     
+    /// Clear entities
+    /// - Parameter entities: Array names of entities to remove
     private func clearEntities(entities: [String]) {
         let context = CoreDataManager.shared.managedObjectContext
         context.perform {

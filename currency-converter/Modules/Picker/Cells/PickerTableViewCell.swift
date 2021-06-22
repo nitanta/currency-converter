@@ -22,6 +22,10 @@ class PickerTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    /// Populate table view cell
+    /// - Parameters:
+    ///   - code: country code
+    ///   - value: exchange rate
     func configure(code: String, value: Double) {
         self.currencyCodeLbl.text = code
         self.currencyValueLbl.text = "\(value)"

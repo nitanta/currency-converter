@@ -20,6 +20,10 @@ class Container {
 class APIProvider<Endpoint: EndpointProtocol> {
     
     // MARK: - Request data
+    
+    /// Get data for the endpoint
+    /// - Parameter endpoint: endpoint
+    /// - Returns: publisher containing either data or error
     func getData(from endpoint: Endpoint) -> AnyPublisher<Data, Error> {
         guard let request = performRequest(for: endpoint) else {
             return Fail(error: APIProviderErrors.invalidURL)
@@ -31,6 +35,10 @@ class APIProvider<Endpoint: EndpointProtocol> {
     }
     
     // MARK: - Request building
+    
+    /// Build the url request for the endpoint
+    /// - Parameter endpoint: endpoint
+    /// - Returns: urlrequest for the endpoint
     private func performRequest(for endpoint: Endpoint) -> URLRequest? {
         guard var urlComponents = URLComponents(string: endpoint.absoluteURL) else {
             return nil
@@ -74,6 +82,11 @@ class APIProvider<Endpoint: EndpointProtocol> {
     }
     
     // MARK: - Getting data
+    
+    
+    /// Perform network call and load data
+    /// - Parameter request: url request
+    /// - Returns: publisher containing either data or error
     private func loadData(with request: URLRequest) -> AnyPublisher<Data, Error> {
         return URLSession.shared.dataTaskPublisher(for: request)
             .mapError({ error -> Error in

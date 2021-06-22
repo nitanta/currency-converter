@@ -91,6 +91,7 @@ class CalculatorViewController: UIViewController {
     }
 }
 
+// MARK: - CalculatorViewControllerInput
 extension CalculatorViewController: CalculatorViewControllerInput {
     func showDefaultCurrencyRate(code: String, source: String, rate: Double) {
         selectedCodeBtn.isHidden = false
@@ -115,12 +116,14 @@ extension CalculatorViewController: CalculatorViewControllerInput {
     
 }
 
+// MARK: - PickerViewControllerParentOutput
 extension CalculatorViewController: PickerViewControllerParentOutput {
     func reloadRates() {
         output?.loadCurrentRate()
     }
 }
 
+// MARK: - CountriesViewControllerParentOutput
 extension CalculatorViewController: CountriesViewControllerParentOutput {
     func reloadCountry() {
         selectedCodeBtn.isHidden = true

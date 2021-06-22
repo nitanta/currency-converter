@@ -9,6 +9,8 @@ import Foundation
 
 class CountryManager {
     
+    /// Load countries list from the json file saved in the application bundle
+    /// - Parameter completion: Returns result type for array of countries or error
     func loadCountries(completion: @escaping (Result<[CountryResponse], Error>) -> Void) {
         guard let path = Bundle.main.url(forResource: "Countries", withExtension: "json") else {
             completion(.failure(APIProviderErrors.unknownError))

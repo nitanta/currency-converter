@@ -23,6 +23,8 @@ class CountryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    /// Populate tableviewcell
+    /// - Parameter data: CountryResponse
     func configure(data: CountryResponse) {
         self.countryCodeLbl.text = data.code
         self.emojiLbl.text = data.emoji

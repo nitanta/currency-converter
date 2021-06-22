@@ -15,10 +15,14 @@ protocol RatesServiceProtocol {
 
 class RatesService: RatesServiceProtocol {
     
+    /// API provider
     private let apiProvider = APIProvider<AppEndpoint>()
         
     init() {}
     
+    /// Fetch rates for the currently saved country currency
+    /// - Parameter code: country code
+    /// - Returns: publisher having either response or error
     func fetchRates(code: String) -> AnyPublisher<RatesResponse, Error> {
         return apiProvider.getData(
             from: .fetchRates(code: code)
@@ -37,6 +41,10 @@ class RatesService: RatesServiceProtocol {
 }
 
 class MockRateService: RatesServiceProtocol {
+    
+    /// Fetch rates for the currently saved country currency
+    /// - Parameter code: country code
+    /// - Returns: publisher having either response or error
     func fetchRates(code: String) -> AnyPublisher<RatesResponse, Error> {
         guard let response = RatesResponse.stubSuccessModel else {
             return Fail(error: APIProviderErrors.dataNil)

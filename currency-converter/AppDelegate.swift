@@ -33,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
+    
+    /// Handles background refresh
+    /// - Parameter task: task for the background operation
     func handleAppRefreshTask(task: BGAppRefreshTask) {
         task.expirationHandler = {
             task.setTaskCompleted(success: false)
@@ -56,6 +59,7 @@ extension AppDelegate {
         scheduleBackgroundRateFetch()
     }
     
+    /// Schedule background tasks
     func scheduleBackgroundRateFetch() {
         let rateFetchTask = BGAppRefreshTaskRequest(identifier: "com.lotuslabs.ratefetch")
         rateFetchTask.earliestBeginDate = Date(timeIntervalSinceNow: 30 * 60) //30 minutes background refresh

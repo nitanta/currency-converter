@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Errors generated during api call
 enum APIErrors: Int, LocalizedError {
     case badRequest = 400
     case unAuthorized = 401
@@ -30,6 +31,7 @@ enum APIErrors: Int, LocalizedError {
     }
 }
 
+/// Errors generated before or after network calls
 enum APIProviderErrors: LocalizedError {
     
     case invalidURL
