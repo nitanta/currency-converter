@@ -19,8 +19,8 @@ protocol CalculatorInteractorOutput: AnyObject {
 
 final class CalculatorInteractor {
     var presenter: CalculatorPresenterInput?
-    var worker: PickerWorker?
-    var dbWorker: PickerDbWorker?
+    var worker: PickerWorkerLogic?
+    var dbWorker: PickerDbWorkerLogic?
 }
 
 extension CalculatorInteractor: CalculatorInteractorInput {

@@ -37,7 +37,6 @@
 		506D5297267E0E1400C437BC /* RateResponseSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 50472629267CECE900E5F84E /* RateResponseSuccess.json */; };
 		506D529F267E0E1800C437BC /* RateResponseFail.json in Resources */ = {isa = PBXBuildFile; fileRef = 50472631267CECFF00E5F84E /* RateResponseFail.json */; };
 		506D52B0267E0EAF00C437BC /* Countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 50906A23267CA543009B3CA9 /* Countries.json */; };
-		507DC45E26810D59005FC17D /* PickerDbWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507DC45D26810D59005FC17D /* PickerDbWorkerTests.swift */; };
 		50906A24267CA543009B3CA9 /* Countries.json in Sources */ = {isa = PBXBuildFile; fileRef = 50906A23267CA543009B3CA9 /* Countries.json */; };
 		50906A31267CA5B5009B3CA9 /* CountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A30267CA5B5009B3CA9 /* CountriesViewController.swift */; };
 		50906A3A267CA5D6009B3CA9 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A38267CA5D6009B3CA9 /* CountryTableViewCell.swift */; };
@@ -45,20 +44,20 @@
 		50906A41267CA70A009B3CA9 /* CountryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A40267CA70A009B3CA9 /* CountryResponse.swift */; };
 		50906A4A267CA7DF009B3CA9 /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A49267CA7DF009B3CA9 /* CountryManager.swift */; };
 		50906A94267CABA5009B3CA9 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906A93267CABA5009B3CA9 /* ErrorHandling.swift */; };
-		50906AB1267CB0EA009B3CA9 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906AB0267CB0EA009B3CA9 /* AppError.swift */; };
 		50906AD0267CC5F6009B3CA9 /* CoredataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906ACF267CC5F6009B3CA9 /* CoredataManager.swift */; };
 		50906ADE267CC6CB009B3CA9 /* AppEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50906ADD267CC6CB009B3CA9 /* AppEndpoint.swift */; };
+		5099682A2681A29300EF4DAD /* CountriesWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509968292681A29300EF4DAD /* CountriesWorkerTests.swift */; };
+		5099682F2681A3AD00EF4DAD /* PickerWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5099682E2681A3AD00EF4DAD /* PickerWorkerTests.swift */; };
+		509968372681A58B00EF4DAD /* PickerDbWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509968362681A58B00EF4DAD /* PickerDbWorkerTests.swift */; };
 		50C438EF267F4F9F008D5F49 /* PickerDbWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C438EE267F4F9F008D5F49 /* PickerDbWorker.swift */; };
 		50C438FB267F72AB008D5F49 /* CountriesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C438FA267F72AB008D5F49 /* CountriesViewControllerTests.swift */; };
 		50C43903267F72BA008D5F49 /* CountriesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43902267F72BA008D5F49 /* CountriesInteractorTests.swift */; };
 		50C43908267F72C8008D5F49 /* CountriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43907267F72C8008D5F49 /* CountriesPresenterTests.swift */; };
 		50C4390D267F72D5008D5F49 /* CountriesRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4390C267F72D5008D5F49 /* CountriesRouterTests.swift */; };
-		50C43915267F72F6008D5F49 /* CountriesWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43914267F72F6008D5F49 /* CountriesWorkerTests.swift */; };
 		50C4391A267F730A008D5F49 /* PickerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43919267F730A008D5F49 /* PickerViewControllerTests.swift */; };
 		50C4391F267F7315008D5F49 /* PickerInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4391E267F7315008D5F49 /* PickerInteractorTests.swift */; };
 		50C43924267F7322008D5F49 /* PickerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43923267F7322008D5F49 /* PickerPresenterTests.swift */; };
 		50C43929267F732C008D5F49 /* PickerRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43928267F732C008D5F49 /* PickerRouterTests.swift */; };
-		50C4392E267F733A008D5F49 /* PickerWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4392D267F733A008D5F49 /* PickerWorkerTests.swift */; };
 		50C43933267F7361008D5F49 /* CalculatorViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C43932267F7361008D5F49 /* CalculatorViewControllerTests.swift */; };
 		50C4393B267F736E008D5F49 /* CalculatorInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4393A267F736E008D5F49 /* CalculatorInteractorTests.swift */; };
 		50C43940267F737A008D5F49 /* CalculatorPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4393F267F737A008D5F49 /* CalculatorPresenterTests.swift */; };
@@ -126,7 +125,6 @@
 		504726AA267D181E00E5F84E /* DatabaseManageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManageable.swift; sourceTree = "<group>"; };
 		506D527C267DB5F500C437BC /* CurrentCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCountry.swift; sourceTree = "<group>"; };
 		506D5281267DB60100C437BC /* CurrentCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCurrency.swift; sourceTree = "<group>"; };
-		507DC45D26810D59005FC17D /* PickerDbWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDbWorkerTests.swift; sourceTree = "<group>"; };
 		50906A23267CA543009B3CA9 /* Countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Countries.json; sourceTree = "<group>"; };
 		50906A30267CA5B5009B3CA9 /* CountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewController.swift; sourceTree = "<group>"; };
 		50906A38267CA5D6009B3CA9 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -134,20 +132,20 @@
 		50906A40267CA70A009B3CA9 /* CountryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryResponse.swift; sourceTree = "<group>"; };
 		50906A49267CA7DF009B3CA9 /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
 		50906A93267CABA5009B3CA9 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
-		50906AB0267CB0EA009B3CA9 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		50906ACF267CC5F6009B3CA9 /* CoredataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoredataManager.swift; sourceTree = "<group>"; };
 		50906ADD267CC6CB009B3CA9 /* AppEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEndpoint.swift; sourceTree = "<group>"; };
+		509968292681A29300EF4DAD /* CountriesWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesWorkerTests.swift; sourceTree = "<group>"; };
+		5099682E2681A3AD00EF4DAD /* PickerWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerWorkerTests.swift; sourceTree = "<group>"; };
+		509968362681A58B00EF4DAD /* PickerDbWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDbWorkerTests.swift; sourceTree = "<group>"; };
 		50C438EE267F4F9F008D5F49 /* PickerDbWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDbWorker.swift; sourceTree = "<group>"; };
 		50C438FA267F72AB008D5F49 /* CountriesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewControllerTests.swift; sourceTree = "<group>"; };
 		50C43902267F72BA008D5F49 /* CountriesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesInteractorTests.swift; sourceTree = "<group>"; };
 		50C43907267F72C8008D5F49 /* CountriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesPresenterTests.swift; sourceTree = "<group>"; };
 		50C4390C267F72D5008D5F49 /* CountriesRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRouterTests.swift; sourceTree = "<group>"; };
-		50C43914267F72F6008D5F49 /* CountriesWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesWorkerTests.swift; sourceTree = "<group>"; };
 		50C43919267F730A008D5F49 /* PickerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewControllerTests.swift; sourceTree = "<group>"; };
 		50C4391E267F7315008D5F49 /* PickerInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerInteractorTests.swift; sourceTree = "<group>"; };
 		50C43923267F7322008D5F49 /* PickerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPresenterTests.swift; sourceTree = "<group>"; };
 		50C43928267F732C008D5F49 /* PickerRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerRouterTests.swift; sourceTree = "<group>"; };
-		50C4392D267F733A008D5F49 /* PickerWorkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerWorkerTests.swift; sourceTree = "<group>"; };
 		50C43932267F7361008D5F49 /* CalculatorViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewControllerTests.swift; sourceTree = "<group>"; };
 		50C4393A267F736E008D5F49 /* CalculatorInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorInteractorTests.swift; sourceTree = "<group>"; };
 		50C4393F267F737A008D5F49 /* CalculatorPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorPresenterTests.swift; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				50906ADC267CC6AF009B3CA9 /* Services */,
-				50906AB0267CB0EA009B3CA9 /* AppError.swift */,
 				50906ADD267CC6CB009B3CA9 /* AppEndpoint.swift */,
 				50472613267CE53200E5F84E /* APIProvider.swift */,
 			);
@@ -325,8 +322,8 @@
 				50C4391E267F7315008D5F49 /* PickerInteractorTests.swift */,
 				50C43923267F7322008D5F49 /* PickerPresenterTests.swift */,
 				50C43928267F732C008D5F49 /* PickerRouterTests.swift */,
-				50C4392D267F733A008D5F49 /* PickerWorkerTests.swift */,
-				507DC45D26810D59005FC17D /* PickerDbWorkerTests.swift */,
+				5099682E2681A3AD00EF4DAD /* PickerWorkerTests.swift */,
+				509968362681A58B00EF4DAD /* PickerDbWorkerTests.swift */,
 			);
 			path = Picker;
 			sourceTree = "<group>";
@@ -338,7 +335,7 @@
 				50C43902267F72BA008D5F49 /* CountriesInteractorTests.swift */,
 				50C43907267F72C8008D5F49 /* CountriesPresenterTests.swift */,
 				50C4390C267F72D5008D5F49 /* CountriesRouterTests.swift */,
-				50C43914267F72F6008D5F49 /* CountriesWorkerTests.swift */,
+				509968292681A29300EF4DAD /* CountriesWorkerTests.swift */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -654,7 +651,6 @@
 				50472642267CF65E00E5F84E /* StringExtension.swift in Sources */,
 				5047262A267CECE900E5F84E /* RateResponseSuccess.json in Sources */,
 				50906A41267CA70A009B3CA9 /* CountryResponse.swift in Sources */,
-				50906AB1267CB0EA009B3CA9 /* AppError.swift in Sources */,
 				5047264B267CF7C500E5F84E /* CountriesInteractor.swift in Sources */,
 				50472671267CF83F00E5F84E /* PickerRouter.swift in Sources */,
 				50906A3A267CA5D6009B3CA9 /* CountryTableViewCell.swift in Sources */,
@@ -687,18 +683,18 @@
 				50E06F69267BA39E00EBC7B3 /* currency_converterTests.swift in Sources */,
 				50C43924267F7322008D5F49 /* PickerPresenterTests.swift in Sources */,
 				50C4390D267F72D5008D5F49 /* CountriesRouterTests.swift in Sources */,
+				509968372681A58B00EF4DAD /* PickerDbWorkerTests.swift in Sources */,
 				50C4391F267F7315008D5F49 /* PickerInteractorTests.swift in Sources */,
 				50C43940267F737A008D5F49 /* CalculatorPresenterTests.swift in Sources */,
 				50C43945267F7387008D5F49 /* CalculatorRouterTests.swift in Sources */,
-				50C43915267F72F6008D5F49 /* CountriesWorkerTests.swift in Sources */,
 				50C4393B267F736E008D5F49 /* CalculatorInteractorTests.swift in Sources */,
 				50C43903267F72BA008D5F49 /* CountriesInteractorTests.swift in Sources */,
 				50C43933267F7361008D5F49 /* CalculatorViewControllerTests.swift in Sources */,
 				50C4391A267F730A008D5F49 /* PickerViewControllerTests.swift in Sources */,
 				50C4395D267F741A008D5F49 /* CountryManagerTests.swift in Sources */,
+				5099682A2681A29300EF4DAD /* CountriesWorkerTests.swift in Sources */,
 				50C438FB267F72AB008D5F49 /* CountriesViewControllerTests.swift in Sources */,
-				50C4392E267F733A008D5F49 /* PickerWorkerTests.swift in Sources */,
-				507DC45E26810D59005FC17D /* PickerDbWorkerTests.swift in Sources */,
+				5099682F2681A3AD00EF4DAD /* PickerWorkerTests.swift in Sources */,
 				50C43929267F732C008D5F49 /* PickerRouterTests.swift in Sources */,
 				50C43908267F72C8008D5F49 /* CountriesPresenterTests.swift in Sources */,
 			);

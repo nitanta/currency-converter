@@ -36,10 +36,10 @@ final class CountriesManagerTests: XCTestCase {
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100)) {
             expectation1.fulfill()
         }
-        waitForExpectations(timeout: 1)
+        waitForExpectations(timeout: 0.1)
         
         XCTAssertFalse(countries.isEmpty)
     }

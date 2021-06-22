@@ -51,7 +51,7 @@ final class PickerInteractorTests: XCTestCase {
     }
     
     func test_pickerInteractor_whenViewLoadedAndWorkerCalled_showLoaderRemoved() {
-        let expectation1 = expectation(description: "Wait for load countries to return")
+        let expectation1 = expectation(description: "Wait for load rates to return")
         pickerWorker.makeRatesStub = .success(RatesResponse.stubSuccessModel?.quotes ?? [:])
         
         sut.loadRates()
@@ -65,7 +65,7 @@ final class PickerInteractorTests: XCTestCase {
     }
     
     func test_pickerInteractor_whenWorkerCalledWithSuccessData_showCurrencyListCalled() {
-        let expectation1 = expectation(description: "Wait for load countries to return")
+        let expectation1 = expectation(description: "Wait for load rates to return")
         pickerWorker.makeRatesStub = .success(RatesResponse.stubSuccessModel?.quotes ?? [:])
         
         sut.loadRates()
@@ -139,39 +139,5 @@ final class PickerWorkerMock: PickerWorkerLogic {
             completion(stub)
         }
     }
-    
-}
-
-final class PickerDbWorkerMock: PickerDbWorkerLogic {
-    func getSavedRates() -> ExchangeRataDefinable? {
-        return ExchangeRateMock(id: "USD", code: "USD", timestamp: Date(), rates: RatesResponse.stubSuccessModel?.quotes ?? [:])
-    }
-    
-    func getCurrentCountryCode() -> String {
-        return Global.defaultCode
-    }
-    
-    func saveCurrentRate(code: String, rate: Double) {}
-    func saveCountry(code: String) {}
-    
-    func loadSavedCountry() -> CurrentCountryDefinable {
-        return CurrentCountryMock(id: "COUNTRY", code: "USD")
-    }
-    
-    func loadSavedRate() -> (code: String, source: String, rate: Double)? {
-        return (code: "AUD", source: "USD", rate: 1.30)
-    }
-    func saveNewRate() -> (code: String, source: String, rate: Double)? {
-        return (code: "AUD", source: "USD", rate: 1.30)
-    }
-    
-    func hasCurrentRateSaved() -> Bool {
-        return true
-    }
-    
-    func getCurrentCurrencyCode() -> String? {
-        return Global.defaultCode
-    }
-    func updateCurrentCurrencyRate(rate: Double) {}
     
 }

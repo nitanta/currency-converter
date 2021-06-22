@@ -129,7 +129,7 @@ private final class CountriesPresenterInputMock: CountriesPresenterInput {
 }
 
 
-private final class CountriesWorkerMock: CountriesWorkerLogic {
+final class CountriesWorkerMock: CountriesWorkerLogic {
     var fetchCountriesCalled: Bool = false
     var makeCountriesStub: Result<[CountryResponse], Error>?
     func fetchCountries(completion: @escaping (Result<[CountryResponse], Error>) -> Void) {
