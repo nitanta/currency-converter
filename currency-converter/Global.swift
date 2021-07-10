@@ -12,7 +12,7 @@ struct Global {
        return "http://api.currencylayer.com"
     }
     static var apiKey: String {
-        return "72cb1057044dd201006fc5bc22868181"
+        return "XXXX"
     }
     static var defaultCode: String {
         return "USD"
